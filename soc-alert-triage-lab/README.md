@@ -3,7 +3,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-TryHackMe-red?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Type-Alert%20Triage-orange?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Accuracy-100%25-green?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Role-SOC%20Analyst%20Tier%201-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Status-Completed-green?style=for-the-badge"/>
 </p>
