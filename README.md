@@ -1,3 +1,3 @@
 | Labs | Platform | Date | Link |
 |---|---|---|---|
-| NAME | TryHackMe | DATA | [View Lab](LINK AQUI) |
+| SOC Alert Triage Lab | TryHackMe | 05/05/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/tree/main/soc-alert-triage-lab) |
