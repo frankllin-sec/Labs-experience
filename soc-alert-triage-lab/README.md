@@ -105,7 +105,25 @@ The part that took the most time was writing the incident reports. Grammar, stru
 
 This is something I expect to improve naturally with daily practice, the more I do it, the more automatic it becomes. My goal is to build this muscle memory.
 
-> *"Technical detection is the foundation. Clear communication is what makes a SOC Analyst truly effective."*
+## 📊 Final Results
+
+| Metric | Result |
+|---|---|
+| 🔔 Closed Alerts | 4 alerts |
+| ✅ True Positive Rate | 100% |
+| ✅ False Positive Rate | 100% |
+| ⏱️ Mean Time to Resolve | 5 minutes |
+| ⏱️ Mean Dwell Time | 12 minutes |
+| 🏆 Ranking | 1st place |
+| 🎯 Score | 160 pts |
+
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab2.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab2.jpg" width="400"/>
+</a>
+
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab1.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab1.jpg" width="400"/>
+</a>
 
 ---
 
