@@ -106,7 +106,7 @@ Additional phishing email identified as part of the same campaign. Classified as
 ## 💬 Honest Self-Assessment
 
 **What went well:**
-I identified the correct classification for all 4 alerts quickly. The technical analysis — recognizing fake domains, URL shorteners, HTTP vs HTTPS, and correlating alerts  felt natural and came fast, i`ve been studing a lot these days 
+I identified the correct classification for all 4 alerts quickly. The technical analysis recognizing fake domains, URL shorteners, HTTP vs HTTPS, and correlating alerts felt natural and came fast, i`ve been studing a lot these days. 
 
 **What I need to improve:**
 The part that took the most time was writing the incident reports. Grammar, structure, and making sure I covered all the required fields (Who, What, When, Where, Why) consistently slowed me down.
