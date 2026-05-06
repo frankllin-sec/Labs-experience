@@ -15,7 +15,10 @@ This lab simulates a real **SOC Analyst Tier 1** workflow  triaging security ale
 
 The scenario involved a phishing campaign that targeted employees of a simulated company. My job was to analyze each alert, correlate the events, and document my findings professionally.
 
----
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab1.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab1.jpg" width="400"/>
+</a>
+
 
 ## 🔍 Alerts Investigated
 
@@ -77,7 +80,13 @@ Additional phishing email identified as part of the same campaign. Classified as
 | 🏆 Ranking | 1st place |
 | 🎯 Score | 160 pts |
 
----
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab2.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab2.jpg" width="400"/>
+</a>
+
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab3.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab3.jpg" width="400"/>
+</a>
 
 ## 🧠 What I Learned
 
@@ -104,26 +113,6 @@ I identified the correct classification for all 4 alerts quickly. The technical 
 The part that took the most time was writing the incident reports. Grammar, structure, and making sure I covered all the required fields (Who, What, When, Where, Why) consistently slowed me down.
 
 This is something I expect to improve naturally with daily practice, the more I do it, the more automatic it becomes. My goal is to build this muscle memory.
-
-## 📊 Final Results
-
-| Metric | Result |
-|---|---|
-| 🔔 Closed Alerts | 4 alerts |
-| ✅ True Positive Rate | 100% |
-| ✅ False Positive Rate | 100% |
-| ⏱️ Mean Time to Resolve | 5 minutes |
-| ⏱️ Mean Dwell Time | 12 minutes |
-| 🏆 Ranking | 1st place |
-| 🎯 Score | 160 pts |
-
-<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab2.jpg">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab2.jpg" width="400"/>
-</a>
-
-<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab1.jpg">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/soc-alert-triage-lab/lab1.jpg" width="400"/>
-</a>
 
 ---
 
