@@ -87,9 +87,11 @@ One log entry showed reversed traffic direction, confirming a response was sent:
 | 🛠️ Tool Identified | NESSUS — Vulnerability Scanner |
 
 ---
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Fundamentals-tryhackme/soc-fund7.jpg" target="_blank">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Fundamentals-tryhackme/soc-fund7.jpg" width="650"/>
+</a>
 
 ## 🧠 What I Learned
-
 ### Technical Skills
 - How to structure a SOC investigation
 - Recognizing **NESSUS** as a legitimate vulnerability scanning tool.
