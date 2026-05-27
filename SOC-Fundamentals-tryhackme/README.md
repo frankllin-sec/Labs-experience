@@ -15,6 +15,9 @@ This lab simulates a real **SOC Analyst Tier 1** workflow — receiving a securi
 The scenario involved a port scanning activity detected on an internal host. My job was to analyze the logs, correlate the events, and document my findings professionally.
 
 ---
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Fundamentals-tryhackme/soc1.jpg" target="_blank">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Fundamentals-tryhackme/soc1.jpg" width="700"/>
+</a>
 
 ## 🔍 Investigation — Port Scan Alert
 
