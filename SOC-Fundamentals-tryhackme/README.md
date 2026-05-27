@@ -87,6 +87,7 @@ One log entry showed reversed traffic direction, confirming a response was sent:
 | 🛠️ Tool Identified | NESSUS — Vulnerability Scanner |
 
 ---
+<p align="center"><i>Room completed ✅</i></p>
 <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Fundamentals-tryhackme/soc-fund7.jpg" target="_blank">
   <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Fundamentals-tryhackme/soc-fund7.jpg" width="650"/>
 </a>
