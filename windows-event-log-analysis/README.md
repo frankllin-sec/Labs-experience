@@ -99,7 +99,7 @@ The `access.log` file was located at `/root/Rooms/logs` on the AttackBox.
 
 ```bash
 # Navigate to the log directory
-cd /Rooms/logs
+cd Rooms/logs
 
 # List available files
 ls
