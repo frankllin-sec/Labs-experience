@@ -5,7 +5,9 @@
   <img src="https://img.shields.io/badge/Type-Firewall%20Analysis-orange?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Role-SOC%20Analyst%20Tier%201-blue?style=for-the-badge"/>
 </p>
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Firewall-Fundamentals/Screenshots/firewall1intro.jpg" width="700"/>
+</p>
 ---
 
 ## 📌 About This Lab
@@ -25,7 +27,7 @@ The lab includes hands-on work with **Windows Defender Firewall**, where the tas
 | **Outbound Rule** | Controls traffic going OUT of the system |
 | **Allow Rule** | Permits specific traffic matching defined criteria |
 | **Block Rule** | Denies specific traffic matching defined criteria |
-| **SSH (Port 22)** | Secure Shell — remote access protocol, common attack target |
+| **SSH (Port 22)** | Secure Shell - remote access protocol, common attack target |
 
 ---
 
@@ -46,7 +48,9 @@ The security team noticed suspicious incoming and outgoing traffic on a critical
 **Method:** Navigated to Inbound Rules in Windows Defender Firewall Advanced Settings. Filtered rules by port `22` and looked for entries with **Action = Block** to identify the rule blocking all incoming SSH traffic.
 
 > **Answer:** `Core Op`
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Firewall-Fundamentals/Screenshots/firewall1.jpg" width="700"/>
+</p>
 ---
 
 ### ❓ Q2 — A rule was created to allow SSH from one single IP address. What is the rule name?
@@ -62,17 +66,9 @@ The security team noticed suspicious incoming and outgoing traffic on a critical
 **Method:** Opened the `Infra team` rule details and inspected the **Remote IP Address** field to identify the single IP address permitted to connect via SSH.
 
 > **Answer:** `192.168.13.7`
-
----
-
-## 🗺️ MITRE ATT&CK Mapping
-
-| Field | Detail |
-|---|---|
-| **Tactic** | Initial Access (TA0001) |
-| **Technique** | T1190 — Exploit Public-Facing Application |
-| **Relevance** | SSH (port 22) is a common vector for unauthorized remote access |
-| **Defense** | Restrict SSH access via firewall rules — block all, allow only trusted IPs |
+<p align="center">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Firewall-Fundamentals/Screenshots/firewall2.jpg" width="700"/>
+</p>
 
 ---
 
@@ -86,7 +82,7 @@ The security team noticed suspicious incoming and outgoing traffic on a critical
 
 ### Analyst Mindset
 - Blocking all traffic on a port and then creating an allow exception for a specific IP is the correct **least privilege** approach to remote access
-- SSH on port 22 should never be open to all IPs on a production system — always restrict by source IP
+- SSH on port 22 should never be open to all IPs on a production system - always restrict by source IP
 - Firewall rules are a first line of defense, but they must be reviewed regularly — misconfigured or overly permissive rules are a common finding in security audits
 
 ---
@@ -97,25 +93,12 @@ The security team noticed suspicious incoming and outgoing traffic on a critical
 The logic of block-all + allow-exception clicked immediately. Filtering by port in the firewall rules made it straightforward to find the relevant entries and extract the answers.
 
 **What I need to improve:**
-Getting comfortable with more complex rule sets — real environments have hundreds of firewall rules. Building the instinct to quickly identify anomalies in large rule lists will take more practice.
+Getting comfortable with more complex rule sets - real environments have hundreds of firewall rules. Building the instinct to quickly identify anomalies in large rule lists will take more practice.
 
 ---
-
-## 📁 Repository Structure
-
-```
-Firewall-Fundamentals/
-├── README.md          # Lab documentation
-└── Screenshots/       # Evidence screenshots from the lab
-```
-
----
-
-## 🖼️ Screenshots
-
-> Screenshots of the Windows Defender Firewall rules and investigation steps will be available in the [`Screenshots`](./Screenshots/) folder.
-
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Firewall-Fundamentals/Screenshots/firewalldone.jpg" width="700"/>
+</p>
 
 <p align="center">
   <i>"Stay sharp, stay curious, stay secure."</i> 🔐
