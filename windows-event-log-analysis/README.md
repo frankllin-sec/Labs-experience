@@ -7,6 +7,11 @@
 </p>
 
 ---
+<p align="center">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/logs%20fundaments.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/logs%20fundaments.jpg" width="600"/>
+  </a>
+</p>
 
 ## 📌 About This Lab
 
@@ -33,6 +38,9 @@ The investigation involved filtering Windows Security logs by Event ID to recons
 On a Friday, a critical organization reported being a victim of a cyber attack. Critical data was exfiltrated from a file server in the organization's network. The security team identified the **username and IP address** of the compromised system that had access to the file server at the time of the attack.
 
 **Mission:** Investigate the attacker's activities on the compromised system — *before* they pivoted to the file server.
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs.jpg" width="600"/>
+</a>
 
 ---
 
@@ -42,10 +50,9 @@ On a Friday, a critical organization reported being a victim of a cyber attack. 
 
 **Method:** Opened Event Viewer → Windows Logs → Security. Used **Filter Current Log** and filtered by Event ID `4720`. Identified the most recent entry to find the last account created.
 
-<a href="images/q1-user-account-created.png">
-  <img src="images/q1-user-account-created.png" width="600"/>
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%201.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%201.jpg" width="600"/>
 </a>
-
 ---
 
 ### ❓ Q2 - Which user account created the above account?
@@ -54,8 +61,8 @@ On a Friday, a critical organization reported being a victim of a cyber attack. 
 
 **Method:** Opened the Event ID `4720` log entry and inspected the **Subject: Account Name** field — this shows the account that performed the creation.
 
-<a href="images/q2-created-by.png">
-  <img src="images/q2-created-by.png" width="600"/>
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%202.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%202.jpg" width="600"/>
 </a>
 
 ---
@@ -66,8 +73,8 @@ On a Friday, a critical organization reported being a victim of a cyber attack. 
 
 **Method:** Filtered Security log by Event ID `4722`. Located the entry matching the account found in Q1 and checked the event timestamp.
 
-<a href="images/q3-account-enabled.png">
-  <img src="images/q3-account-enabled.png" width="600"/>
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%203.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%203.jpg" width="600"/>
 </a>
 
 ---
@@ -78,8 +85,8 @@ On a Friday, a critical organization reported being a victim of a cyber attack. 
 
 **Method:** Filtered by Event ID `4724` and confirmed a password reset event was logged for the account identified in Q1.
 
-<a href="images/q4-password-reset.png">
-  <img src="images/q4-password-reset.png" width="600"/>
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%204.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%204.jpg" width="600"/>
 </a>
 
 ---
@@ -92,7 +99,7 @@ The `access.log` file was located at `/root/Rooms/logs` on the AttackBox.
 
 ```bash
 # Navigate to the log directory
-cd /root/Rooms/logs
+cd /Rooms/logs
 
 # List available files
 ls
@@ -101,23 +108,20 @@ ls
 cat access.log
 ```
 
-<a href="images/q5-webserver-log.png">
-  <img src="images/q5-webserver-log.png" width="600"/>
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%205.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%205.jpg" width="600"/>
+</a>
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%206.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%206.jpg" width="600"/>
+</a>
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%207.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%207.jpg" width="600"/>
 </a>
 
 ---
-
-## 🔴 SOC Detection Logic
-
-A sequence of these three events in a short timeframe is a strong **IOC** and should trigger an alert:
-
-```
-Event ID 4720 → Account Created
-Event ID 4722 → Account Enabled       (within minutes)
-Event ID 4724 → Password Reset        (within minutes)
-
-```
-
+<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-8.jpg">
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-8.jpg" width="600"/>
+</a>
 ---
 
 ## 🧠 What I Learned
