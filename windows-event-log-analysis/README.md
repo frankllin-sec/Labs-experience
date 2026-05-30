@@ -101,28 +101,9 @@ ls
 cat access.log
 ```
 
-### Commands Used for Analysis
-
-```bash
-# Count requests per IP address
-cat access.log | cut -d ' ' -f1 | sort | uniq -c | sort -rn
-
-# Filter by specific IP
-grep "TARGET_IP" access.log
-
-# Filter by HTTP status code
-grep " 200 " access.log
-grep " 404 " access.log
-
-# Filter by request method
-grep "POST" access.log
-```
-
 <a href="images/q5-webserver-log.png">
   <img src="images/q5-webserver-log.png" width="600"/>
 </a>
-
----
 
 ---
 
