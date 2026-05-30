@@ -1,3 +1,0 @@
-# Teste
-
-Pasta de teste.
