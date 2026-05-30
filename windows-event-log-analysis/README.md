@@ -111,9 +111,7 @@ cat access.log
 <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%205.jpg">
   <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%205.jpg" width="600"/>
 </a>
-<a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%206.jpg">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%206.jpg" width="600"/>
-</a>
+---
 <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%207.jpg">
   <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/windows-event-log-analysis/screenshots/events-logs-anser%207.jpg" width="600"/>
 </a>
