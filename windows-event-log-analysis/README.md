@@ -84,7 +84,7 @@ On a Friday, a critical organization reported being a victim of a cyber attack. 
 
 ---
 
-## 🔍 Investigation — Part 2: Web Server Access Log Analysis
+## 🔍 Investigation - Part 2: Web Server Access Log Analysis
 
 ### Setup
 
