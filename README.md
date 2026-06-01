@@ -9,7 +9,7 @@
 | Firewall-Fundamentals| TryHackMe | May/30/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Firewall-Fundamentals/README.md) |
 | Introduction-to-SIEM | TryHackMe | May/30/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/tree/main/Introduction-to-SIEM#readme) |
 | Vulnerability Scanner Overview | TryHackMe | May/31/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/tree/main/Vulnerability-Scanner-Overview#readme) |
-| IAAA Failures - Logging & Alerting Failure | TryHackMe | May/31/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/IAAA-Failures-Logging-Alerting/README.md) |
+| Junior Security Analyst Intro | TryHackMe | May/31/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Junior-Security-Analyst-Intro/README.md) |
 
 
 
