@@ -7,6 +7,11 @@
 </p>
 
 ---
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/Screenshots/systematacintro.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Analyst-Scenarios/Screenshots/systematacintro.jpg" width="600"/>
+  </a>
+</p>
 
 ## 📌 About This Lab
 
@@ -60,8 +65,11 @@ Attach:  Invoice.rar (password: 1111)
 
 **Response:** Blocked email immediately. Confirmed fake domain. Analyzed archive contents — malicious DOCX confirmed.
 
-> **Verdict:** ✅ Mark protected — malicious document blocked before opening.
-
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/Screenshots/human%20vet%201.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Analyst-Scenarios/Screenshots/human%20vet%201.jpg" width="600"/>
+  </a>
+</p>
 ---
 
 ### ❓ Scenario 3 — Deepfake Vishing Attack on CEO
@@ -72,7 +80,11 @@ Attach:  Invoice.rar (password: 1111)
 
 **Response:** Flagged as social engineering. Escalated. Ben confirmed he never made the call — **deepfake voice attack**.
 
-> **Verdict:** ✅ CEO email protected — deepfake vishing stopped before account takeover.
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/Screenshots/human%20vet%203.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Analyst-Scenarios/Screenshots/human%20vet%203.jpg" width="600"/>
+  </a>
+</p>
 
 ---
 
@@ -93,8 +105,17 @@ URLs before login:
 
 **Response:** Analyzed pre-login URL history. Confirmed phishing domain. Initiated password reset and account review.
 
-> **Verdict:** ✅ Rose protected — credential phishing identified and contained.
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/Screenshots/human%20vet%203.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Analyst-Scenarios/Screenshots/human%20vet%203.jpg" width="600"/>
+  </a>
+</p>
 
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/Screenshots/human%20vet%204.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Analyst-Scenarios/Screenshots/human%20vet%204.jpg" width="600"/>
+  </a>
+</p>
 ---
 
 ## 🔍 Lab 2 — Systems at Risk & Remediation
@@ -109,8 +130,7 @@ URLs before login:
 
 **Response:** Patched the vulnerability immediately. Performed threat hunt to identify any compromise that occurred before the patch was applied.
 
-> **Verdict:** ✅ Root cause addressed — patch applied, threat hunt initiated.
-
+ 
 ---
 
 ### ❓ Scenario 6 — WordPress Admin Panel Brute-Force
@@ -121,7 +141,6 @@ URLs before login:
 
 **Response:** Mitigated root cause by addressing breached credentials. Restored defaced pages. Initiated backdoor hunt across the WordPress installation.
 
-> **Verdict:** ✅ Credentials secured — pages restored, backdoor investigation launched.
 
 ---
 
@@ -133,7 +152,6 @@ URLs before login:
 
 **Response:** Applied latest patches to the London office firewall before exploitation occurred.
 
-> **Verdict:** ✅ Proactive response — patched before attacker could exploit.
 
 ---
 
@@ -144,8 +162,12 @@ URLs before login:
 **Investigation:** Trusted application behavior changed post-update — classic **supply chain attack** indicator. Malicious code injected into a legitimate software update.
 
 **Response:** Isolated the affected laptop. Identified the compromised update as the attack vector. Initiated rollback and forensic investigation.
-
-> **Verdict:** ✅ Supply chain attack identified — endpoint isolated before lateral movement.
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/Screenshots/systematac3.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Analyst-Scenarios/Screenshots/systematac3.jpg" width="600"/>
+  </a>
+</p>
+ 
 
 ---
 ## 🧠 What I Learned
@@ -170,6 +192,11 @@ URLs before login:
 **What went well:**
 Both labs had clear red flags once I knew what to look for, the fake domain, the after-hours call, the pre-login phishing URL, the post-update behavioral change. Connecting each indicator to a real technique made the analysis feel like genuine SOC work.
 
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/Screenshots/systematacend.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Analyst-Scenarios/Screenshots/systematacend.jpg" width="600"/>
+  </a>
+</p>
 
 ---
 
