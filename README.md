@@ -10,6 +10,7 @@
 | Introduction-to-SIEM | TryHackMe | May/30/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/tree/main/Introduction-to-SIEM#readme) |
 | Vulnerability Scanner Overview | TryHackMe | May/31/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/tree/main/Vulnerability-Scanner-Overview#readme) |
 | Junior Security Analyst Intro | TryHackMe | May/31/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Junior-Security-Analyst-Intro/README.md) |
+| SOC-Analyst-Scenarios | TryHackMe | Jun/3/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/README.md) |
 
 
 
