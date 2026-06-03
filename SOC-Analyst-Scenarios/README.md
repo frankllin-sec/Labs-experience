@@ -10,7 +10,7 @@
 
 ## 📌 About This Lab
 
-This lab covers two progressive SOC analyst scenarios at TryHackMe. Unlike basic monitoring labs, these simulations show a SOC team deeply embedded in company operations — working with IT, HR, and employees directly. Scenarios cover malware delivery, phishing, deepfake vishing, credential phishing, CVE patching, brute-force response, supply chain attacks, and proactive threat intelligence.
+This lab covers two progressive SOC analyst scenarios at TryHackMe. Unlike basic monitoring labs, these simulations show a SOC team deeply embedded in company operations working with IT, HR, and employees directly. Scenarios cover malware delivery, phishing, deepfake vishing, credential phishing, CVE patching, brute-force response, supply chain attacks, and proactive threat intelligence.
 
 ---
 
@@ -148,38 +148,19 @@ URLs before login:
 > **Verdict:** ✅ Supply chain attack identified — endpoint isolated before lateral movement.
 
 ---
-
-## 🗺️ MITRE ATT&CK Mapping
-
-| Scenario | Tactic | Technique |
-|---|---|---|
-| Fake software / data stealer | Initial Access (TA0001) | T1566.002 — Phishing: Malicious Link |
-| Malicious email attachment | Initial Access (TA0001) | T1566.001 — Spearphishing Attachment |
-| Deepfake CEO vishing | Initial Access (TA0001) | T1598 — Phishing for Information |
-| Fake login page | Credential Access (TA0006) | T1056.003 — Web Portal Capture |
-| CVE-2024-49040 Exchange | Initial Access (TA0001) | T1190 — Exploit Public-Facing Application |
-| WordPress brute-force | Credential Access (TA0006) | T1110 — Brute Force |
-| Cisco firewall CVE | Initial Access (TA0001) | T1190 — Exploit Public-Facing Application |
-| Supply chain attack | Initial Access (TA0001) | T1195.002 — Compromise Software Supply Chain |
-
----
-
 ## 🧠 What I Learned
 
 ### Technical Skills
-- How to investigate quarantined files and confirm malware classification
 - How to identify fake/typosquatted domains impersonating legitimate services
-- How password-protected archives are used to bypass email security filters
 - How to analyze pre-login URL history to identify credential phishing
-- How CVE patching fits into the incident response lifecycle
 - How to recognize supply chain attacks from behavioral changes post-update
-- The importance of proactive threat intelligence — acting before exploitation occurs
+- The importance of proactive threat intelligence acting before exploitation occurs
 
 ### Analyst Mindset
-- Every employee interaction is a potential security event — SOC is not just about SIEM alerts
+- Every employee interaction is a potential security event SOC is not just about SIEM alerts
 - Urgency + unusual timing + hidden number = immediate red flags for social engineering
-- A login from the correct country does not confirm legitimacy — context always matters
-- Patching is reactive — threat hunting after patching is proactive and equally important
+- A login from the correct country does not confirm legitimacy context always matters
+- Patching is reactive threat hunting after patching is proactive and equally important
 - When a trusted app starts behaving maliciously after an update, always consider supply chain first
 
 ---
@@ -187,26 +168,8 @@ URLs before login:
 ## 💬 Honest Self-Assessment
 
 **What went well:**
-Both labs had clear red flags once I knew what to look for — the fake domain, the after-hours call, the pre-login phishing URL, the post-update behavioral change. Connecting each indicator to a real MITRE technique made the analysis feel like genuine SOC work.
+Both labs had clear red flags once I knew what to look for, the fake domain, the after-hours call, the pre-login phishing URL, the post-update behavioral change. Connecting each indicator to a real technique made the analysis feel like genuine SOC work.
 
-**What I need to improve:**
-Speed and confidence under pressure. In a real SOC, these scenarios would arrive simultaneously. Building faster pattern recognition across different attack types — phishing, CVEs, supply chain — without hesitation is the next level.
-
----
-
-## 📁 Repository Structure
-
-```
-SOC-Analyst-Scenarios/
-├── README.md
-└── Screenshots/
-```
-
----
-
-## 🖼️ Screenshots
-
-> Screenshots will be available in the [`Screenshots`](./Screenshots/) folder.
 
 ---
 
