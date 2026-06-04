@@ -54,17 +54,11 @@ When picking alerts to triage, the correct SOC approach is:
 **Verdict:** ✅ True Positive — Malicious file download confirmed, execution pending.
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage3.jpg">
-    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert_triage3.jpg" width="600"/>
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage4.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert_triage4.jpg" width="600"/>
   </a>
 </p>
 
-
-<p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage6.jpg">
-    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert_triage6.jpg" width="600"/>
-  </a>
-</p>
 
 ---
 
@@ -75,12 +69,13 @@ When picking alerts to triage, the correct SOC approach is:
 **Investigation:** 5.8 GB sent and 5.2 GB received to `*.zoom.us`. Source IP `192.168.45.66` returned clean on AbuseIPDB and VirusTotal. Destination `*.zoom.us` is a trusted video conferencing platform. Sent/Received data volumes are nearly equal — consistent with active video conferencing, not exfiltration.
 
 **Verdict:** ❌ False Positive — Normal Zoom video conferencing traffic from a meeting room.
-
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage2.jpg">
-    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert_triage2.jpg" width="600"/>
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage3.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert_triage3.jpg" width="600"/>
   </a>
 </p>
+
+
 
 ---
 
@@ -92,11 +87,6 @@ When picking alerts to triage, the correct SOC approach is:
 
 **Verdict:** ❌ False Positive — Expected developer activity from a trusted network segment.
 
-<p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage4.jpg">
-    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert_triage4.jpg" width="600"/>
-  </a>
-</p>
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage5.jpg">
@@ -126,31 +116,18 @@ When picking alerts to triage, the correct SOC approach is:
 
 ---
 
-## 🗺️ MITRE ATT&CK Mapping
-
-| Alert | Tactic | Technique |
-|---|---|---|
-| Double-Extension File Creation | Defense Evasion (TA0005) | T1036.007 — Masquerading: Double File Extension |
-| Potential Data Exfiltration | Exfiltration (TA0010) | T1048 — Exfiltration Over Alternative Protocol |
-| Download from GitHub Repository | Resource Development (TA0042) | T1583 — Acquire Infrastructure |
-| Bruteforce Attack from External | Credential Access (TA0006) | T1110 — Brute Force |
-
----
-
 ## 🧠 What I Learned
 
 ### Technical Skills
 - How to navigate a SIEM dashboard and apply correct alert prioritization logic
 - How to distinguish True Positives from False Positives using contextual investigation
 - How to correlate source IP, destination, network segment, and file reputation to reach a verdict
-- How double-extension file masquerading works as a real-world evasion technique
 - How to use VirusTotal and AbuseIPDB inline during triage to enrich alert context
 
 ### Analyst Mindset
 - Severity does not always equal threat — a Critical alert can be a False Positive if context supports it
 - Always check the source network segment — traffic from `VPN/DEVELOPERS` behaves differently than traffic from `HR`
 - Equal sent/received data volumes are a strong indicator of video conferencing, not exfiltration
-- The analyst comment is the most important output of triage — it must justify the verdict clearly
 
 ---
 
@@ -160,23 +137,7 @@ When picking alerts to triage, the correct SOC approach is:
 Identifying the alerts and reaching the correct verdict felt natural once I understood the triage methodology. Connecting the file hash to VirusTotal results and the domain reputation to the verdict made the investigation feel like real SOC work.
 
 **What I need to improve:**
-Writing professional analyst comments independently. At this stage, my biggest challenge was not identifying the threat — it was articulating the investigation findings in clear, professional English. I used AI assistance to help structure and improve the grammar of my analyst comments. With more practice and repetition, I expect this to become more natural over time.
-
----
-
-## 📁 Repository Structure
-
-```
-SOC-Alert-Triage/
-├── README.md
-└── Screenshots/
-```
-
----
-
-## 🖼️ Screenshots
-
-> Screenshots of the SIEM dashboard, alert details, and analyst comments are available in the [`Screenshots`](./Screenshots/) folder.
+Writing professional analyst comments independently. At this stage, my biggest challenge was not identifying the threat it was articulating the investigation findings in clear, professional English. I used AI assistance to help structure and improve the grammar of my analyst comments. With more practice and repetition, I expect this to become more natural over time.
 
 ---
 
