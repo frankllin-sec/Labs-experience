@@ -7,25 +7,16 @@
 </p>
 
 ---
-
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert%20triageintro.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert%20triageintro.jpg" width="600"/>
+  </a>
+</p>
 ## 📌 About This Lab
 
-This lab covers the full **alert triage lifecycle** — one of the most essential skills for any SOC L1 analyst. Knowing how to properly handle an alert ultimately decides whether a security breach is detected and prevented, or missed and devastating.
+This lab covers the full **alert triage lifecycle**  one of the most essential skills for any SOC L1 analyst. Knowing how to properly handle an alert ultimately decides whether a security breach is detected and prevented, or missed and devastating.
 
-The lab provided a live TryHackMe SIEM dashboard with 5 real alerts across different severity levels. The task was to triage each alert following proper SOC methodology — assign, investigate, classify, comment, and close.
-
----
-
-## 🔑 Key Concepts
-
-| Concept | Description |
-|---|---|
-| **Alert Triage** | The process of reviewing, prioritizing, investigating, and resolving security alerts |
-| **True Positive** | A real threat confirmed by investigation |
-| **False Positive** | A benign event incorrectly flagged as a threat |
-| **Severity Levels** | Critical → High → Medium → Low — determines investigation priority |
-| **Analyst Comment** | Written documentation of the investigation rationale and verdict |
-| **Alert Lifecycle** | New → Awaiting Action → In Progress → Closed |
+The lab provided a live TryHackMe SIEM dashboard with 5 real alerts across different severity levels. The task was to triage each alert following proper SOC methodology  assign, investigate, classify, comment, and close.
 
 ---
 
@@ -35,7 +26,7 @@ When picking alerts to triage, the correct SOC approach is:
 
 1. **Filter** — Only take new, unassigned alerts not already being investigated
 2. **Sort by Severity** — Critical first, then High, Medium, Low
-3. **Sort by Time** — Oldest first within the same severity level — older breaches may already be deeper into the kill chain
+3. **Sort by Time**  Oldest first within the same severity level — older breaches may already be deeper into the kill chain
 
 ---
 
@@ -51,11 +42,6 @@ When picking alerts to triage, the correct SOC approach is:
   </a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage3.jpg">
-    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert_triage3.jpg" width="600"/>
-  </a>
-</p>
 
 ---
 
@@ -66,6 +52,13 @@ When picking alerts to triage, the correct SOC approach is:
 **Investigation:** User downloaded `cats2025.mp4.exe` from `freecatvideoshd.monster` — a suspicious `.monster` TLD domain commonly associated with malicious infrastructure. The double-extension filename is consistent with **T1036.007 (Masquerading — Double File Extension)**, a technique used to trick users into executing malicious files disguised as media. File MD5 `14d8486f3f63875ef93cfd240c5dc10b` was flagged as malicious by 50/70 vendors on VirusTotal. Execution has not yet been confirmed.
 
 **Verdict:** ✅ True Positive — Malicious file download confirmed, execution pending.
+
+<p align="center">
+  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage3.jpg">
+    <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/SOC-Alert-Triage/Screenshots/alert_triage3.jpg" width="600"/>
+  </a>
+</p>
+
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Alert-Triage/Screenshots/alert_triage6.jpg">
