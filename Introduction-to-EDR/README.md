@@ -141,15 +141,9 @@ SOC analyst at TECH THM with access to the EDR console. Multiple medium and high
 
 ### Technical Skills
 - How to navigate an EDR dashboard and analyze process chains to trace attack execution flow
-- How macro-enabled Office documents trigger CMD → cURL download chains — a common initial access technique
+- How macro-enabled Office documents trigger CMD → cURL download chains a common initial access technique
 - How to read Threat Intel labels in EDR to distinguish malicious tools from legitimate IT utilities
 - How EDR blocks exfiltration attempts at the network level before data leaves the endpoint
-
-### Analyst Mindset
-- Process chains are the most valuable artifact in EDR   always trace from parent to child to understand the full attack flow
-- AppData execution is suspicious by default, but Threat Intel context can confirm legitimacy never assume without checking
-- A file saved to disk but not executed is still a threat it is malware staging and requires immediate containment
-- EDR telemetry gives you answers that SIEM alone cannot process hashes, command lines, and network connections in one view
 
 ---
 
