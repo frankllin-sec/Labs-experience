@@ -12,6 +12,7 @@
 | Junior Security Analyst Intro | TryHackMe | May/31/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Junior-Security-Analyst-Intro/README.md) |
 | SOC-Analyst-Scenarios | TryHackMe | Jun/3/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/SOC-Analyst-Scenarios/README.md) |
 | SOC Alert Triage | TryHackMe | Jun/4/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/tree/main/SOC-Alert-Triage#readme) |
+| Introduction to EDR | TryHackMe | Jun/8/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Introduction-to-EDR/README.md) |
 
 
 
