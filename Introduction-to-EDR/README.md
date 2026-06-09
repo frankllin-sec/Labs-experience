@@ -1,4 +1,4 @@
-# 🖥️ Introduction to EDR — TryHackMe Lab
+# 🖥️ Introduction to EDR 
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-TryHackMe-red?style=for-the-badge"/>
@@ -10,9 +10,9 @@
 
 ## 📌 About This Lab
 
-This lab introduces **Endpoint Detection and Response (EDR)** — one of the most widely adopted security solutions in enterprise environments. Unlike traditional antivirus, EDR provides deep visibility into endpoint activity, process chains, network connections, and behavioral analysis.
+This lab introduces **Endpoint Detection and Response (EDR)** one of the most widely adopted security solutions in enterprise environments. Unlike traditional antivirus, EDR provides deep visibility into endpoint activity, process chains, network connections, and behavioral analysis.
 
-As a SOC analyst at TECH THM, the task was to triage multiple medium and high-severity detections across three endpoints using the EDR console — analyzing process chains, identifying malicious behavior, and extracting key IOCs.
+As a SOC analyst at TECH THM, the task was to triage multiple medium and high-severity detections across three endpoints using the EDR console analyzing process chains, identifying malicious behavior, and extracting key IOCs.
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Introduction-to-EDR/Screenshots/edrintro.jpg">
@@ -123,7 +123,7 @@ SOC analyst at TECH THM with access to the EDR console. Multiple medium and high
 
 **Detection:** Execution from AppData Directory | Severity: MEDIUM | Host: `DESKTOP-DEV01` | User: `daniel.richards`
 
-**Investigation:** `UpdateAgent.exe` was launched from `AppData\Roaming` — a common path used by malware to avoid detection. However, Threat Intel classified it as a known internal IT utility tool. The process initiated an outbound connection to `10.10.20.5` on port 8080 via HTTP — an internal IP, consistent with legitimate IT activity.
+**Investigation:** `UpdateAgent.exe` was launched from `AppData\Roaming` — a common path used by malware to avoid detection. However, Threat Intel classified it as a known internal IT utility tool. The process initiated an outbound connection to `10.10.20.5` on port 8080 via HTTP an internal IP, consistent with legitimate IT activity.
 
 **Process Chain:** `explorer.exe → UpdateAgent.exe`
 
@@ -137,58 +137,32 @@ SOC analyst at TECH THM with access to the EDR console. Multiple medium and high
 
 ---
 
-## 🗺️ MITRE ATT&CK Mapping
-
-| Detection | Tactic | Technique |
-|---|---|---|
-| Initial Access via Malicious Office Document | Initial Access (TA0001) | T1566.001 — Spearphishing Attachment |
-| CMD launching cURL for payload download | Execution (TA0002) | T1059.003 — Windows Command Shell |
-| Credential Dumping via LSASS | Credential Access (TA0006) | T1003.001 — LSASS Memory |
-| Exfiltration attempt via WeTransfer | Exfiltration (TA0010) | T1048 — Exfiltration Over Alternative Protocol |
-| Execution from AppData | Defense Evasion (TA0005) | T1036 — Masquerading |
-
----
-
 ## 🧠 What I Learned
 
 ### Technical Skills
 - How to navigate an EDR dashboard and analyze process chains to trace attack execution flow
 - How macro-enabled Office documents trigger CMD → cURL download chains — a common initial access technique
-- How credential dumping via LSASS works and how EDR detects it via behavioral signatures
 - How to read Threat Intel labels in EDR to distinguish malicious tools from legitimate IT utilities
 - How EDR blocks exfiltration attempts at the network level before data leaves the endpoint
 
 ### Analyst Mindset
-- Process chains are the most valuable artifact in EDR — always trace from parent to child to understand the full attack flow
-- AppData execution is suspicious by default, but Threat Intel context can confirm legitimacy — never assume without checking
-- A file saved to disk but not executed is still a threat — it is malware staging and requires immediate containment
-- EDR telemetry gives you answers that SIEM alone cannot — process hashes, command lines, and network connections in one view
+- Process chains are the most valuable artifact in EDR   always trace from parent to child to understand the full attack flow
+- AppData execution is suspicious by default, but Threat Intel context can confirm legitimacy never assume without checking
+- A file saved to disk but not executed is still a threat it is malware staging and requires immediate containment
+- EDR telemetry gives you answers that SIEM alone cannot process hashes, command lines, and network connections in one view
 
 ---
 
 ## 💬 Honest Self-Assessment
 
 **What went well:**
-Reading the process chains and connecting each node to the right MITRE technique felt natural. The credential dumping detection was particularly clear — `syncsvc.exe` accessing `lsass.exe` from a temp directory with no signature is an immediate red flag.
+Reading the process chains and connecting each node felt natural. The credential dumping detection was particularly clear — `syncsvc.exe` accessing `lsass.exe` from a temp directory with no signature is an immediate red flag.
 
 **What I need to improve:**
-Getting faster at distinguishing legitimate tools from malicious ones without relying on Threat Intel labels. In a real SOC, Threat Intel may not always have a verdict — building the instinct to evaluate process behavior independently is the next level.
+Getting faster at distinguishing legitimate tools from malicious ones without relying on Threat Intel labels. In a real SOC, Threat Intel may not always have a verdict building the instinct to evaluate process behavior independently is the next level.
 
 ---
 
-## 📁 Repository Structure
-
-```
-Introduction-to-EDR/
-├── README.md
-└── Screenshots/
-```
-
----
-
-## 🖼️ Screenshots
-
-> Screenshots of the EDR dashboard, process chains, and detection details are available in the [`Screenshots`](./Screenshots/) folder.
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Introduction-to-EDR/Screenshots/edrend.jpg">
