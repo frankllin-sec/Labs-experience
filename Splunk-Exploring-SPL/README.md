@@ -19,25 +19,6 @@ This lab covers **Splunk's Search Processing Language (SPL)** — the core skill
 </p>
 
 ---
-
-## 🔑 Key Concepts
-
-| Concept | Description |
-|---|---|
-| **SPL** | Search Processing Language — Splunk query language for filtering and transforming log data |
-| **index** | Data store in Splunk where logs are saved and searched |
-| **Piping** | Chaining commands with pipe to progressively transform results |
-| **Wildcard** | Matches any value — used for broad searches |
-| **top / stats** | Transforming commands that aggregate and rank results |
-| **eventstats / eval** | Used for anomaly detection by calculating statistical baselines |
-| **zscore** | Statistical measure to identify logins deviating from normal patterns |
-
----
-
-## 🔍 Investigation — SPL Queries & Results
-
----
-
 ### 🔎 Search & Reporting
 
 <p align="center">
@@ -292,18 +273,6 @@ index=vpnlogs
 
 ---
 
-## 🗺️ MITRE ATT&CK Mapping
-
-| Technique Detected | Tactic | Technique |
-|---|---|---|
-| EventID 4624 — Successful Logon | Credential Access (TA0006) | T1078 — Valid Accounts |
-| Password set via net user command | Persistence (TA0003) | T1136 — Create Account |
-| PowerShell highest RiskScore | Execution (TA0002) | T1059.001 — PowerShell |
-| Anomalous login by country | Initial Access (TA0001) | T1078.004 — Cloud Accounts |
-| Off-hours login 3 AM zscore | Initial Access (TA0001) | T1078 — Valid Accounts |
-
----
-
 ## 🧠 What I Learned
 
 ### Technical Skills
@@ -311,7 +280,7 @@ index=vpnlogs
 - How to use time picker to filter events to a specific date and time window
 - How eventstats and eval calculate statistical baselines for anomaly detection
 - How zscore identifies logins that deviate from a user's typical behavior
-- Why PowerShell consistently appears high-risk in threat intel lookups — a real SOC pattern
+-
 
 ### Analyst Mindset
 - SPL is not about memorizing commands — it is about knowing what question to ask
@@ -327,19 +296,10 @@ index=vpnlogs
 SPL pipe logic clicked quickly — each command transforms the previous output intuitively. The anomaly detection section was the most interesting, connecting statistical concepts to real SOC use cases.
 
 **What I need to improve:**
-Writing complex multi-stage SPL queries from scratch without reference. I can follow and modify queries confidently, but building anomaly detection pipelines independently from memory will take more practice.
+The most challenging part of this lab was the **Anomaly Detection** section — specifically understanding how `zscore` works mathematically and how to apply it to detect behavioral outliers in login data. This is where I spent the most time and still need more practice. Building multi-stage SPL pipelines like the anomaly detection queries independently from memory will require repetition with real datasets before it becomes natural.
 
 ---
 
-## 📁 Repository Structure
-
-```
-Splunk-Exploring-SPL/
-├── README.md
-└── Screenshots/
-```
-
----
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Splunk-Exploring-SPL/Screenshots/sp-end.jpg">
