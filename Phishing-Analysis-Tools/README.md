@@ -24,19 +24,6 @@ The findings from this investigation contribute directly to building detection r
 
 ---
 
-## 🔑 Key Concepts
-
-| Concept | Description |
-|---|---|
-| **Email Header Analysis** | Examining Received, Return-Path, SPF, and DKIM fields to identify spoofed senders |
-| **Sandbox Analysis** | Running suspicious files in an isolated environment to observe behavior safely |
-| **IOC Extraction** | Identifying IPs, domains, hashes, and URLs associated with malicious activity |
-| **SHA256 Hash** | Cryptographic fingerprint used to uniquely identify a file and check threat intel |
-| **CVE-2017-11882** | Microsoft Office Equation Editor RCE vulnerability commonly exploited in phishing |
-| **ANYRUN** | Interactive malware sandbox that provides process chains, network activity, and threat verdicts |
-
----
-
 ## 🔍 Investigation — Part 1: Phishing Email Analysis (Phish3Case1.eml)
 
 ### Scenario
@@ -231,19 +218,6 @@ A second phishing attachment — an Excel spreadsheet — was submitted to a dif
 
 ---
 
-## 🗺️ MITRE ATT&CK Mapping
-
-| Technique | Tactic | Detail |
-|---|---|---|
-| T1566.001 — Spearphishing Attachment | Initial Access (TA0001) | Malicious PDF and XLSX delivered via phishing email |
-| T1566.002 — Spearphishing Link | Initial Access (TA0001) | Shortened URL in email body redirecting to phishing page |
-| T1036 — Masquerading | Defense Evasion (TA0005) | Netflix brand impersonation to appear legitimate |
-| T1203 — Exploitation for Client Execution | Execution (TA0002) | CVE-2017-11882 Equation Editor exploit in Excel attachment |
-| T1071 — Application Layer Protocol | Command and Control (TA0011) | EQNEDT32.EXE communicating with malicious C2 domains |
-| T1048 — Exfiltration Over Alternative Protocol | Exfiltration (TA0010) | Data attempted to be sent to biz9holdings.com and findresults.site |
-
----
-
 ## 🧠 What I Learned
 
 ### Technical Skills
@@ -255,8 +229,8 @@ A second phishing attachment — an Excel spreadsheet — was submitted to a dif
 - How phishing attachments chain processes: `EXCEL.EXE → EQNEDT32.EXE → malicious payload download`
 
 ### Analyst Mindset
-- The **Return-Path** field is one of the most reliable indicators of a spoofed sender — legitimate organizations use matching domains
-- **URL shorteners** in phishing emails are always a red flag — they hide the real destination and bypass basic URL reputation checks
+- The **Return-Path** field is one of the most reliable indicators of a spoofed sender legitimate organizations use matching domains
+- **URL shorteners** in phishing emails are always a red flag they hide the real destination and bypass basic URL reputation checks
 - A PDF or XLSX opening and immediately spawning unexpected child processes (like `EQNEDT32.EXE` or `AcroRd32.exe` making outbound connections) is a critical indicator of exploitation
 - Always check the SHA256 hash against threat intel — it's the most reliable way to identify a known malicious file regardless of filename changes
 
@@ -266,9 +240,6 @@ A second phishing attachment — an Excel spreadsheet — was submitted to a dif
 
 **What went well:**
 The email header analysis was intuitive — connecting the Return-Path domain to the spoofed sender and the Received: from IP to the originating mail server made the investigation feel like real SOC work. The ANYRUN sandbox interface was clear and the process chain visualization made it easy to understand how each attachment executed.
-
-**What I need to improve:**
-Deeper understanding of CVE-2017-11882 exploitation chain — specifically how EQNEDT32.EXE is used as a persistence vector and how to write detection rules (Sigma/YARA) to catch this pattern before sandbox analysis is needed. Building that instinct to recognize exploit behavior in process chains without relying on the sandbox verdict label.
 
 ---
 
