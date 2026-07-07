@@ -14,6 +14,7 @@
 | SOC Alert Triage | TryHackMe | Jun/4/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/tree/main/SOC-Alert-Triage#readme) |
 | Introduction to EDR | TryHackMe | Jun/8/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Introduction-to-EDR/README.md) |
 | Splunk: Exploring SPL | TryHackMe | Jun/10/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Splunk-Exploring-SPL/README.md) |
+| Phishing Analysis Tools | TryHackMe | Jul/07/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Phishing-Analysis-Tools/README.md) |
 
 
 
