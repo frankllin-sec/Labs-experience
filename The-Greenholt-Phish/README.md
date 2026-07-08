@@ -22,20 +22,6 @@ The objective was to analyze the email sample, extract key artifacts, investigat
 
 ---
 
-## 🔑 Key Concepts
-
-| Concept | Description |
-|---|---|
-| **Email Header Analysis** | Examining Received, Return-Path, Reply-To fields to identify spoofed senders |
-| **SPF Record** | DNS record that specifies which mail servers are authorized to send email for a domain |
-| **DMARC Record** | Policy that tells receiving servers how to handle emails that fail SPF/DKIM checks |
-| **SHA256 Hash** | Cryptographic fingerprint used to uniquely identify a file for threat intel lookup |
-| **File Type Spoofing** | Disguising a malicious file with a fake extension (e.g., .CAB that is actually a RAR) |
-| **VirusTotal** | Online service that scans files and URLs against 60+ antivirus engines |
-| **IPInfo** | Tool used to geolocate and identify the owner of an IP address |
-| **MXToolbox** | Online tool for SPF, DMARC, MX, and DNS record lookups |
-
----
 
 ## 🔍 Investigation — Email Header Analysis
 
@@ -186,23 +172,14 @@ sha256sum "SWT_#09674321____PDF__.CAB"
 
 ---
 
-## 🗺️ MITRE ATT&CK Mapping
-
-| Technique | Tactic | Detail |
-|---|---|---|
-| T1566.001 — Spearphishing Attachment | Initial Access (TA0001) | Malicious RAR attachment disguised as .CAB delivered via phishing email |
-| T1036.008 — Masquerading: File Extension | Defense Evasion (TA0005) | `.CAB` extension used to disguise a RAR archive containing malware |
-| T1598 — Phishing for Information | Reconnaissance (TA0043) | Generic greeting and fake payment notification used as social engineering lure |
-| T1071 — Application Layer Protocol | Command and Control (TA0011) | Trojan.MSIL/Loki family identified — known for C2 via HTTP |
 
 ---
 
 ## 🧠 What I Learned
 
 ### Technical Skills
-- How to extract key artifacts from email headers using **Thunderbird Message Source** — From, Reply-To, Return-Path, and Received fields
+- How to extract key artifacts from email headers using **Thunderbird Message Source**  From, Reply-To, Return-Path, and Received fields
 - The difference between **From** (display), **Return-Path** (SPF validation), and **Reply-To** (where replies go) — three fields that can each be different in a spoofed email
-- How to perform **SPF** and **DMARC** lookups using MXToolbox to validate domain authentication records
 - How to use **IPInfo** to geolocate an originating IP and identify the hosting provider
 - How to use `sha256sum` in Linux terminal to generate a file hash for threat intel lookup
 - How **file type spoofing** works — the `.CAB` extension was a fake; the actual file was a **RAR** archive containing ransomware/Trojan (Loki family, 50/63 detections on VirusTotal)
@@ -210,7 +187,7 @@ sha256sum "SWT_#09674321____PDF__.CAB"
 ### Analyst Mindset
 - A **Reply-To** address that differs from the **From** address is one of the clearest indicators of phishing — it redirects responses to attacker-controlled infrastructure
 - The **Return-Path** domain is what SPF actually validates — not the visible From address — which is why spoofing the display name is so effective against users
-- File extensions cannot be trusted — always verify the actual file type using hash analysis and VirusTotal
+- File extensions cannot be trusted always verify the actual file type using hash analysis and VirusTotal
 - 50/63 VirusTotal detections with **Trojan.MSIL/Loki** classification means this is a confirmed, well-known threat — not a false positive
 
 ---
@@ -219,10 +196,6 @@ sha256sum "SWT_#09674321____PDF__.CAB"
 
 **What went well:**
 The email header investigation flowed naturally — identifying the Reply-To mismatch, tracing the originating IP, and correlating the Return-Path domain to SPF/DMARC records felt like a complete investigation workflow. Running `sha256sum` on the attachment and confirming the file type via VirusTotal brought the analysis to a satisfying conclusion.
-
-**What I need to improve:**
-Speed at recognizing file type spoofing without needing VirusTotal confirmation. A trained analyst should be able to spot a `.CAB` file that's actually a RAR by checking magic bytes with a tool like `file` in the terminal — building that reflex will come with more malware analysis practice.
-
 ---
 
 ## 📁 Repository Structure
