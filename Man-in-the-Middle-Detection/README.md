@@ -14,9 +14,9 @@ A routine network monitoring alert at **Acme Corp** revealed unusual traffic pat
 
 As a SOC Analyst, the task was to investigate a packet capture (`network_traffic.pcap`) and uncover evidence of **three chained MITM techniques:**
 
-- **ARP Spoofing** — inetwork interception by poisoning ARP cache
-- **DNS Spoofing** �@ traffic redirection via forged DNS responses
-- **SSL Stripping** ℠�TLS downgrade leading to credential capture in plaintext
+- **ARP Spoofing** — network interception by poisoning ARP cache
+- **DNS Spoofing** — traffic redirection via forged DNS responses
+- **SSL Stripping** — TLS downgrade leading to credential capture in plaintext
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Man-in-the-Middle-Detection/Screenshots/minicio.jpg">
@@ -148,7 +148,7 @@ dns.flags.response == 1 && dns.qry.name == "corp-login.acme-corp.local"
 
 ### ❓ Q7 — How many DNS requests were observed from IPs other than 8.8.8.8?
 
-**Method:** Modified the filter to exclude the legitimate DOS server (`8.8.8.8`) and identify responses coming from unexpected sources — revealing the rogue DNS server:
+**Method:** Modified the filter to exclude the legitimate DNS server (`8.8.8.8`) and identify responses coming from unexpected sources — revealing the rogue DNS server:
 
 ```
 dns.flags.response == 1 && ip.src != 8.8.8.8 && dns.qry.name == "corp-login.acme-corp.local"
@@ -224,15 +224,15 @@ http && ip.src == 192.168.10.10 && ip.dst == 192.168.10.55
 ### Analyst Mindset
 - Gratuitous ARP replies that don't match the expected gateway MAC are an immediate red flag — this is how ARP poisoning begins
 - DNS responses coming from IPs other than the configured DNS server are always suspicious — a legitimate response should only come from `8.8.8.8`
-- Credentials transmitted over HTTP instead of HTTPS on a corporate login page indicate SSL stripping — even if the user thinks they(re on a secure connection
-- The attack chain is only visible when you correlate all three layers — ARP, DNS, and HTTP ☠ across the same packet capture
+- Credentials transmitted over HTTP instead of HTTPS on a corporate login page indicate SSL stripping — even if the user thinks they're on a secure connection
+- The attack chain is only visible when you correlate all three layers — ARP, DNS, and HTTP — across the same packet capture
 
 ---
 
 ## 💬 Honest Self-Assessment
 
 **What went well:**
-Following the filters step by step and seeing each attack layer unfold in Wireshark was very clear. Connecting the three chained techniques — ARP → DNS → SSL  unto a single attack narrative made the investigation feel like real incident response work.
+Following the filters step by step and seeing each attack layer unfold in Wireshark was very clear. Connecting the three chained techniques — ARP → DNS → SSL — into a single attack narrative made the investigation feel like real incident response work.
 
 **What I need to improve:**
 Memorizing Wireshark filters from scratch is still a challenge. Right now I rely heavily on references and the lab guidance to build the queries. In a real SOC environment I would likely have a playbook or cheat sheet to reference — and I believe that with experience and repetition, these filters will become second nature over time.
