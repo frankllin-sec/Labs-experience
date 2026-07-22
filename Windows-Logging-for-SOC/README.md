@@ -28,41 +28,33 @@ Opened `Practice-Security.evtx` in Event Viewer and investigated failed and succ
 
 ---
 
-### Q1 - Which event ID describes a successful login?
+### Q1 - Which IP performed a brute force of the THM-PC?
 
-**Method:** Researched which Event ID corresponds to successful logons in Windows Security logs. Event ID 4624 is the standard Windows Security event for a successful account logon.
-
-> **Answer:** `Security / 4624`
-
----
-
-### Q2 - Which IP performed a brute force of the THM-PC?
-
-**Method:** Filtered Security logs for **Event ID 4625** (Failed Logon) with Logon Type 3 and 10 (Network and RDP). Identified the Source Network Address with a high volume of repeated failed login attempts against the Administrator account.
+**Method:** Filtered the current log and searched for Event ID **4625** (Failed Logon - brute force failed login attempts). Identified the Source Network Address with repeated failures.
 
 > **Answer:** `10.10.53.248`
 
 ---
 
-### Q3 - Which user has been breached as a result of the attack?
+### Q2 - Which user has been breached as a result of the attack?
 
-**Method:** After identifying the brute force source IP, filtered for **Event ID 4624** (Successful Logon) with Logon Type 10 from the same source IP to find the successful RDP login.
+**Method:** After identifying the attacker IP from the brute force, filtered for **Event ID 4624** (Successful Logon) from the same source to find the breached account.
 
 > **Answer:** `Administrator`
-
----
-
-### Q4 - What was the Logon ID of the malicious RDP login?
-
-**Method:** Opened the Event ID 4624 with Logon Type 10 and noted the **Logon ID** field - a unique session identifier used to correlate all subsequent events in the same attacker session.
-
-> **Answer:** `0x183C36D`
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log1.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log1.jpg" width="600"/>
   </a>
 </p>
+
+---
+
+### Q3 - What was the Logon ID of the malicious RDP login?
+
+**Method:** Filtered for **Event ID 4624** and looked specifically for **Logon Type 10** (RDP login). The Logon ID is a unique session identifier used to correlate all subsequent attacker actions.
+
+> **Answer:** `0x183C36D`
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log2.jpg">
@@ -80,25 +72,27 @@ Continued with `Practice-Security.evtx`, hunting for **Event ID 4720** (User Cre
 
 ---
 
-### Q5 - Which user was created by the attacker soon after the RDP login?
+### Q4 - Which user was created by the attacker soon after the RDP login?
 
 **Method:** Filtered for **Event ID 4720** and matched the Logon ID `0x183C36D` to confirm the action was performed within the same attacker session.
 
 > **Answer:** `svc_sysrestore`
-
----
-
-### Q6 - Which two privileged groups was the backdoor user added to?
-
-**Method:** Filtered for **Event ID 4732** (Member Added to Security Group). Found the backdoor account added to two built-in privileged groups linked to the same Logon ID.
-
-> **Answer:** `Backup Operators, Remote Desktop Users`
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log3.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log3.jpg" width="600"/>
   </a>
 </p>
+
+---
+
+### Q5 - Which two privileged groups was the backdoor user added to?
+
+**Method:** Filtered for **Event ID 4732** (Member Added to Security Group). Found the backdoor account added to two built-in privileged groups. The Logon ID field matched the previous task - confirming the same attacker session.
+
+> **Answer:** `Backup Operators, Remote Desktop Users`
+
+> **Does the Logon ID field match what you saw in the previous task?** `Yea`
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log4.jpg">
@@ -116,25 +110,25 @@ Opened `Practice-Sysmon.evtx` and analyzed **Sysmon Event ID 1** (Process Create
 
 ---
 
-### Q7 - Which web browser does Sarah use?
+### Q6 - Which web browser does Sarah use?
 
-**Method:** Filtered Sysmon for Event ID 1 and reviewed the Image field. Found Chrome launched by `sarah.miller` from the standard Google Chrome installation path.
+**Method:** Filtered for **Event ID 1** (Process Create) and reviewed the Image field. Found Google Chrome launched by `sarah.miller`.
 
 > **Answer:** `Google Chrome`
-
----
-
-### Q8 - Which file did Sarah download from the browser?
-
-**Method:** Identified a suspicious Sysmon Event ID 1 where a process was launched from the Downloads folder - a red flag for malware staging.
-
-> **Answer:** `C:\Users\sarah.miller\Downloads\ckjg.exe`
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log5.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log5.jpg" width="600"/>
   </a>
 </p>
+
+---
+
+### Q7 - Which file did Sarah download from the browser?
+
+**Method:** Continued reviewing Event ID 1 entries. Found a suspicious process launched from the Downloads folder - a red flag for malware staging. The Image path revealed the downloaded executable.
+
+> **Answer:** `C:\Users\sarah.miller\Downloads\ckjg.exe`
 
 <p align="center">
   <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log6.jpg">
@@ -144,9 +138,9 @@ Opened `Practice-Sysmon.evtx` and analyzed **Sysmon Event ID 1** (Process Create
 
 ---
 
-### Q9 - Which URL was the file downloaded from?
+### Q8 - Which URL was the file downloaded from?
 
-**Method:** Used Sysmon **Event ID 15** (FileCreateStreamHash) which captures the Zone.Identifier - a Windows feature storing the original download URL. The HostUrl field in Contents revealed the source.
+**Method:** Started looking at all events related to `ckjg.exe` and found a suspicious website. Used **Sysmon Event ID 15** (FileCreateStreamHash) which captures the Zone.Identifier - a Windows feature storing the original download URL.
 
 > **Answer:** `http://gettsvenff.com/bgj3/ckjg.exe`
 
@@ -166,9 +160,9 @@ Continued Sysmon analysis using the malware ProcessId to identify persistence me
 
 ---
 
-### Q10 - Which file was created by the malware to persist on the host?
+### Q9 - Which file was created by the malware to persist on the host?
 
-**Method:** Used Sysmon **Event ID 11** (FileCreate) filtered by the malware ProcessId. Found a file dropped to the Windows Startup folder - a classic persistence technique that executes the payload on every system reboot.
+**Method:** Filtered for **Event ID 11** (FileCreate). The direct file path was created in the Windows Startup folder - a classic persistence technique that executes the payload on every system reboot.
 
 > **Answer:** `C:\Users\sarah.miller\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\DeleteApp.url`
 
@@ -180,9 +174,9 @@ Continued Sysmon analysis using the malware ProcessId to identify persistence me
 
 ---
 
-### Q11 - What is the C2 server the malware connected to?
+### Q10 - What is the C2 server the malware connected to?
 
-**Method:** Used Sysmon **Event ID 3** (NetworkConnect) filtered by the malware ProcessId. Found an outbound TCP connection from `ckjg.exe` to an external IP on a non-standard port.
+**Method:** Filtered for **Event ID 3** (Network Connection). Found an outbound TCP connection from `ckjg.exe` to an external IP on a non-standard port.
 
 > **Answer:** `193.46.217.4:7777`
 
@@ -194,9 +188,9 @@ Continued Sysmon analysis using the malware ProcessId to identify persistence me
 
 ---
 
-### Q12 - Which domain does the malicious IP correspond to?
+### Q11 - Which domain does the malicious IP correspond to?
 
-**Method:** Used Sysmon **Event ID 22** (DNS Query) filtered by the malware ProcessId. The QueryName field revealed the C2 domain.
+**Method:** Filtered for **Event ID 22** (DNS Query). The QueryName field revealed the C2 domain queried by the malware.
 
 > **Answer:** `hkfasfsafg.click`
 
@@ -216,7 +210,7 @@ Reviewed PowerShell ConsoleHost_history.txt files for multiple users to identify
 
 ---
 
-### Q13 - Which PowerShell command was executed first?
+### Q12 - Which PowerShell command was executed first?
 
 **Method:** Located the `ConsoleHost_history.txt` file for the Administrator account and reviewed commands in chronological order.
 
@@ -224,9 +218,9 @@ Reviewed PowerShell ConsoleHost_history.txt files for multiple users to identify
 
 ---
 
-### Q14 - When did the Administrator run the first PS command?
+### Q13 - When did the Administrator run the first PS command?
 
-**Method:** Right-clicked the history file, opened Properties, and checked the **Created** date.
+**Method:** Right-clicked the history file, opened Properties, and checked the **Created** date to determine when the PowerShell session began.
 
 > **Answer:** `May 18, 2025`
 
@@ -238,9 +232,9 @@ Reviewed PowerShell ConsoleHost_history.txt files for multiple users to identify
 
 ---
 
-### Q15 - What is the flag stored in the PowerShell history?
+### Q14 - What is the flag stored in the PowerShell history?
 
-**Method:** Checked PowerShell history for all local users - not just Administrator. Found the flag in `thm.bob`'s history file, echoed into a `flag.txt` file.
+**Method:** Checked PowerShell history for all local users - not just Administrator. Found the flag inside the file of user `thm.bob`, echoed into a `flag.txt` file.
 
 > **Answer:** `THM{it_was_me!}`
 
