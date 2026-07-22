@@ -17,6 +17,7 @@
 | Phishing Analysis Tools | TryHackMe | Jul/06/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Phishing-Analysis-Tools/README.md) |
 | The Greenholt Phish | TryHackMe | Jul/07/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/The-Greenholt-Phish/README.md)
 | Man-in-the-Middle Detection | TryHackMe | Jul/20/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/The-Greenholt-Phish/README.md)
+| Windows Logging for SOC | TryHackMe | Jul/22/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/README.md)
 
 
 
