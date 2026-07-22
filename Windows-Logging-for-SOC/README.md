@@ -13,7 +13,7 @@
 SOC analysts spend most of their time triaging alerts and hunting threats using logs in SIEM. This room begins the journey into **Windows logging** - a key skill for any SOC analyst or DFIR professional. The lab covers three critical log sources: **Security Event Logs**, **Sysmon**, and **PowerShell History** - each revealing a different layer of attacker activity on a compromised Windows endpoint.
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/loginicio.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/loginicio.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/loginicio.jpg" width="600"/>
   </a>
 </p>
@@ -43,7 +43,7 @@ Opened `Practice-Security.evtx` in Event Viewer and investigated failed and succ
 > **Answer:** `Administrator`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log1.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log1.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log1.jpg" width="600"/>
   </a>
 </p>
@@ -57,7 +57,7 @@ Opened `Practice-Security.evtx` in Event Viewer and investigated failed and succ
 > **Answer:** `0x183C36D`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log2.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log2.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log2.jpg" width="600"/>
   </a>
 </p>
@@ -79,7 +79,7 @@ Continued with `Practice-Security.evtx`, hunting for **Event ID 4720** (User Cre
 > **Answer:** `svc_sysrestore`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log3.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log3.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log3.jpg" width="600"/>
   </a>
 </p>
@@ -95,7 +95,7 @@ Continued with `Practice-Security.evtx`, hunting for **Event ID 4720** (User Cre
 > **Does the Logon ID field match what you saw in the previous task?** `Yea`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log4.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log4.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log4.jpg" width="600"/>
   </a>
 </p>
@@ -117,7 +117,7 @@ Opened `Practice-Sysmon.evtx` and analyzed **Sysmon Event ID 1** (Process Create
 > **Answer:** `Google Chrome`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log5.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log5.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log5.jpg" width="600"/>
   </a>
 </p>
@@ -131,7 +131,7 @@ Opened `Practice-Sysmon.evtx` and analyzed **Sysmon Event ID 1** (Process Create
 > **Answer:** `C:\Users\sarah.miller\Downloads\ckjg.exe`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log6.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log6.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log6.jpg" width="600"/>
   </a>
 </p>
@@ -145,7 +145,7 @@ Opened `Practice-Sysmon.evtx` and analyzed **Sysmon Event ID 1** (Process Create
 > **Answer:** `http://gettsvenff.com/bgj3/ckjg.exe`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log7.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log7.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log7.jpg" width="600"/>
   </a>
 </p>
@@ -167,7 +167,7 @@ Continued Sysmon analysis using the malware ProcessId to identify persistence me
 > **Answer:** `C:\Users\sarah.miller\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\DeleteApp.url`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log8.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log8.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log8.jpg" width="600"/>
   </a>
 </p>
@@ -181,7 +181,7 @@ Continued Sysmon analysis using the malware ProcessId to identify persistence me
 > **Answer:** `193.46.217.4:7777`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log9.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log9.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log9.jpg" width="600"/>
   </a>
 </p>
@@ -195,7 +195,7 @@ Continued Sysmon analysis using the malware ProcessId to identify persistence me
 > **Answer:** `hkfasfsafg.click`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log10.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log10.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log10.jpg" width="600"/>
   </a>
 </p>
@@ -225,7 +225,7 @@ Reviewed PowerShell ConsoleHost_history.txt files for multiple users to identify
 > **Answer:** `May 18, 2025`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log11.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log11.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log11.jpg" width="600"/>
   </a>
 </p>
@@ -239,7 +239,7 @@ Reviewed PowerShell ConsoleHost_history.txt files for multiple users to identify
 > **Answer:** `THM{it_was_me!}`
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/log12.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log12.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/log12.jpg" width="600"/>
   </a>
 </p>
@@ -282,7 +282,7 @@ Windows-Logging-for-SOC/
 ---
 
 <p align="center">
-  <a href="https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/Screenshots/logfinal.jpg">
+  <a href="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/logfinal.jpg">
     <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Logging-for-SOC/Screenshots/logfinal.jpg" width="600"/>
   </a>
 </p>
