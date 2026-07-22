@@ -259,13 +259,6 @@ Reviewed PowerShell ConsoleHost_history.txt files for multiple users to identify
 - Sysmon Event ID 3 (NetworkConnect) - reveals C2 IP and port
 - Sysmon Event ID 22 (DNS Query) - reveals C2 domain from malware DNS lookups
 - PowerShell ConsoleHost_history.txt persists across reboots and records all commands for all users
-
-### Analyst Mindset
-- The Logon ID is the thread that connects all events in an attacker's session - always note it when you find a malicious login
-- Processes launched from Downloads, Temp, or Public directories are immediate red flags
-- The Zone.Identifier (Sysmon ID 15) is one of the most underrated forensic artifacts - it tells you exactly where a file came from
-- Always check PowerShell history for all users - attackers often leave traces in accounts other than the one they breached
-
 ---
 
 ## Honest Self-Assessment
