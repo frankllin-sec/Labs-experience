@@ -175,13 +175,13 @@ In CyberChef, running the **Magic** function identified the encoding as Base64, 
 - How to safely investigate an exposed attacker web server (directory listing) to pull down a phishing kit
 - How to hash a file locally with `sha256sum` and pivot that hash into VirusTotal for CTI enrichment
 - How to read a phishing kit's `submit.php` source with `grep` to find the credential-exfiltration email
-- How to decode a Base64 + reversed string in CyberChef by building the recipe manually instead of relying on Magic
+
 
 ### Analyst Mindset
 - A phishing kit left exposed on the attacker's own server is a goldmine of IOCs: captured credentials, exfil email, and kit metadata all in one place
 - Always correlate the **sender domain + redirection domain + hosting server** to fully scope a phishing campaign
 - A victim who submits credentials more than once is a strong signal they later re-entered them believing the page was legitimate: worth flagging for priority containment and password reset
-- CyberChef's Magic function is a great starting point, but building the recipe manually is sometimes the only way to fully unpack multi-layer encoding
+
 
 ---
 
