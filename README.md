@@ -18,6 +18,7 @@
 | The Greenholt Phish | TryHackMe | Jul/07/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/The-Greenholt-Phish/README.md)
 | Man-in-the-Middle Detection | TryHackMe | Jul/20/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/The-Greenholt-Phish/README.md)
 | Windows Logging for SOC | TryHackMe | Jul/22/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Logging-for-SOC/README.md)
+| Snapped Phish-ing Line | TryHackMe | Jul/27/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Snapped-Phishing-Line/README.md)
 
 
 
