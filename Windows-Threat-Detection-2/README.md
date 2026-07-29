@@ -24,26 +24,13 @@ This room continues the Windows threat detection journey from [Windows Threat De
 
 ---
 
-## 🎯 MITRE ATT&CK Tactics Covered
-
-| Tactic ID | Name | Description |
-|---|---|---|
-| **TA0007** | Discovery | Threat actors explore the victim's environment, users, and security tools before acting |
-| **TA0009** | Collection | Threat actors gather files, credentials, and other data of value from the host |
-| **TA0006** | Credential Access | Treated here as part of Collection: harvesting saved passwords and keys |
-| **TA0010** | Exfiltration | Threat actors move the collected data out to infrastructure they control |
-
----
-
 ## 🔑 Key Concepts
 
 | Concept | Description |
 |---|---|
 | **Process Tree Reconstruction** | Correlating Sysmon Event ID 1 (process create) records by ProcessId and ParentProcessId to trace a command back to its origin |
-| **Discovery Commands** | Commands like `whoami`, `net user`, and EDR checks that a threat actor runs to understand the victim before acting further |
 | **Data Stealer** | Malware that automates collection and exfiltration without a human operator typing commands manually |
 | **DNS Query (Event ID 22)** | The Sysmon event that reveals which domain a process actually tried to resolve, key for spotting exfiltration destinations |
-| **Living-off-the-Land Downloads** | Using built-in tools (`curl.exe`, `certutil.exe`, PowerShell `Invoke-WebRequest`) instead of custom malware to fetch files, each leaving a different command-line signature |
 
 ---
 
@@ -203,18 +190,9 @@ This room continues the Windows threat detection journey from [Windows Threat De
 
 ### Technical Skills
 - How to reconstruct a full process tree by correlating Sysmon Event ID 1 records through ProcessId and ParentProcessId, tracing a command all the way back to the original phishing binary
-- How to spot Discovery activity (`whoami`, `net user`, EDR presence checks) as it happens in near-real time using Sysmon
 - How to identify Collection targets a threat actor is likely to go after: saved browser passwords, SSH keys, and sensitive documents by filename or extension
-- How to recognize a data stealer's exfiltration path by combining file-search commands (`xcopy` filtered by extension), clipboard access (`Get-ClipBoard`), and DNS queries (Event ID 22) pointing to attacker infrastructure
-- How the exact same file download looks completely different in logs depending on the tool used (browser vs curl vs certutil vs PowerShell IWR), which matters for building detections that don't rely on a single tool signature
+- How to recognize a data DNS queries (Event ID 22) pointing to attacker infrastructure
 
-### Analyst Mindset
-- Discovery commands by themselves are rarely proof of an attack, since IT staff run the same commands legitimately. Context (what came before, what account, what followed) is what turns "net user" into a real finding
-- A data stealer targeting specific extensions (docx, pdf, xlsx) tells you a lot about attacker intent without needing to reverse the binary. The Sysmon command line alone gives that away
-- Living-off-the-land tools like `certutil.exe` are attractive to attackers precisely because they're trusted, signed Windows binaries. Detection has to focus on unusual arguments and network destinations, not just the process name
-- When a lab environment has an unrelated technical hiccup, it's fine to note it and move forward using the intended answer. The goal is understanding the technique, not getting stuck troubleshooting the sandbox itself
-
----
 
 ## 💬 Honest Self-Assessment
 
