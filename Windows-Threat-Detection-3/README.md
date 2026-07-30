@@ -24,20 +24,6 @@ This room completes the Windows threat detection series after [Windows Threat De
 
 ---
 
-## 🎯 MITRE ATT&CK Coverage
-
-| ID | Name | Description |
-|---|---|---|
-| **TA0011** | Command and Control | Maintaining a channel back to the attacker to receive further commands |
-| **TA0003** | Persistence | Surviving reboots, password changes, and time to keep long-term access |
-| **T1136** | Create Account | Creating a new backdoor user account for repeated access |
-| **T1098** | Account Manipulation | Adding a backdoored account to a privileged group like Administrators |
-| **T1543.003** | Create or Modify System Process: Windows Service | Creating a malicious service to run malware on startup |
-| **T1547.001** | Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder | Using the Run registry key or Startup folder to launch malware at logon |
-| **TA0040** | Impact | The final stage attackers work toward, most commonly ransomware |
-
----
-
 ## 🔑 Key Concepts
 
 | Concept | Description |
@@ -183,28 +169,24 @@ This room completes the Windows threat detection series after [Windows Threat De
 > **Answer:** `Ransomware`
 
 **Q: At which stage is it best to detect and stop the attack?**
+
 > **Answer:** `Initial Access`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Threat-Detection-3/Screenshots/dfinal.jpg" width="700"/>
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Threat-Detection-3/Screenshots/d12.jpg" width="700"/>
 </p>
+
 
 ---
 
 ## 🧠 What I Learned
 
-### Technical Skills
 - How to trace a C2 channel from an initial phishing download through file-drop, internet-mark-of-the-web, and DNS query events (Sysmon Event IDs 1, 11, 15, 22)
 - How to investigate a backdoored user end to end: failed logons (4625), account creation (4720), and privileged group membership (4732)
 - How to spot malicious Windows services (Security Event ID 4697) hiding among legitimate-looking ones
 - How to identify persistence through scheduled tasks by checking the Actions tab in Task Scheduler and correlating with Sysmon process creation
 - How Run key (Sysmon Event ID 13) and Startup folder (Sysmon Event ID 11) persistence differ from services and tasks, and why both share explorer.exe as a parent process
 
-### Analyst Mindset
-- Persistence investigations benefit from asking who, what, and which: who created the account, what was the source IP and timing, and which other suspicious activity happened in that same session
-- Don't rely on suspicious-sounding names alone (a service called "Data Protection Service" looks completely legitimate). Cross-reference the actual file path and creation context instead
-- Scheduled tasks are the most attractive persistence method for attackers precisely because they're easy to hide among dozens of legitimate ones, which means a SOC analyst needs a habit of reviewing Task Scheduler entries against a known-good baseline
-- The whole point of detecting Persistence, Discovery, and Collection early is to stop the attack chain well before it reaches Impact. Ransomware is the disaster; everything covered across these three rooms is the opportunity to catch it earlier
 
 ---
 
@@ -217,10 +199,11 @@ Connecting the C2 domain and dropped file back to the same Sysmon Event ID 22 en
 Building a faster mental checklist for "is this service/task/registry entry legitimate?" without needing the room to flag which one is suspicious. In a live environment, I'd want a baseline of expected services and scheduled tasks for a given host so anomalies stand out immediately.
 
 ---
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Threat-Detection-3/Screenshots/d12.jpg" width="700"/>
+  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Threat-Detection-3/Screenshots/dfinal.jpg" width="700"/>
 </p>
+
+
 
 <p align="center">
   <i>"Stay sharp, stay curious, stay secure."</i> 🔐
