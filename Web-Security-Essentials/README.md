@@ -24,21 +24,6 @@ This room steps back from log analysis to cover the security fundamentals behind
 
 ---
 
-## 🔑 Key Concepts
-
-| Concept | Description |
-|---|---|
-| **Access Control** | Restricting users so they only see or change data relevant to their role |
-| **Input Validation & Sanitization** | Cleaning and checking user-submitted data before it's used, to block code injection |
-| **Secure Coding** | Reviewing application code for vulnerabilities early in development |
-| **Web Application Firewall (WAF)** | A protective barrier that filters traffic and blocks requests matching malicious patterns |
-| **Access Logging** | Maintaining a log of requests so anomalies can be investigated later |
-| **CDN (Content Delivery Network)** | Serving cached content from edge servers to cut latency and shield the origin server from direct traffic |
-| **Antivirus** | Endpoint-level protection that detects and blocks known malware |
-| **Least Privilege** | Running services under dedicated low-privilege accounts instead of admin rights |
-| **System Hardening** | Ensuring only what's actually needed is running and open on a host or server |
-
----
 
 ## 🔍 Securing Secure-A-Site
 
@@ -137,13 +122,6 @@ This room steps back from log analysis to cover the security fundamentals behind
 </p>
 
 ---
-
-## 🧠 What I Learned
-
-### Technical Skills
-- How to map a specific security weakness (visible admin dashboard, injectable login form, verbose error messages, unpatched exposure) to the exact control that fixes it, rather than a generic "add security" answer
-- How defense in depth applies across three distinct layers of a deployment: the application code itself, the server serving it, and the host machine underneath both
-- Why a CDN is a security control and not just a performance one: shielding the origin server's real IP from direct traffic reduces its attack surface
 
 ### Analyst Mindset
 - Each layer (app, server, host) has its own failure modes and its own fix. A WAF doesn't replace secure coding, and antivirus doesn't replace least privilege. Real hardening means applying the right control at the right layer instead of over-relying on one
