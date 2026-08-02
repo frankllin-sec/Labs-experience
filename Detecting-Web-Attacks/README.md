@@ -25,19 +25,6 @@ This room builds on [Web Security Essentials](https://github.com/frankllin-sec/L
 
 ---
 
-## 🔑 Key Concepts
-
-| Concept | Description |
-|---|---|
-| **Client-Side Attack** | Abuses the user's browser or behavior; largely invisible to SOC tools like server logs or network captures |
-| **XSS (Cross-Site Scripting)** | The most common client-side attack: malicious scripts run inside a trusted site and execute in the victim's browser |
-| **CSRF (Cross-Site Request Forgery)** | Tricks the victim's browser into sending unauthorized requests while they're authenticated |
-| **Clickjacking** | Invisible elements overlaid on legitimate content trick users into interacting with something they didn't intend to |
-| **Server-Side Attack** | Exploits the web server, application code, or backend directly, and leaves evidence in logs and network traffic |
-| **Brute-Force** | Repeated login attempts against a form until valid credentials are found |
-| **SQL Injection (SQLi)** | Malicious input alters a dynamically built SQL query, letting an attacker read or manipulate the database |
-| **WAF (Web Application Firewall)** | Inspects and filters requests before they reach the server, using rules, IP reputation, and challenge-response mechanisms like CAPTCHA |
-
 ---
 
 ## 🔍 Investigation
@@ -139,27 +126,11 @@ This room builds on [Web Security Essentials](https://github.com/frankllin-sec/L
 
 ---
 
-## 🧠 What I Learned
-
-### Technical Skills
-- How to distinguish client-side attacks (invisible to server-side tooling) from server-side attacks (which leave a trail in logs and network traffic)
-- How to retrace a full attack chain in access logs: directory fuzzing, then brute-force, then SQL injection, by reading User-Agent strings, status codes, and request timing
-- How to decode a URL-encoded SQLi payload with CyberChef instead of trying to read it by eye
-- How to build a targeted Wireshark filter for SQL injection indicators (`%27`, `'`, `--`, `%23`) when I don't already know the exact payload, and follow the HTTP stream to confirm it
-- Why access logs alone weren't enough here: the actual submitted credentials and the stolen data only became visible once I moved to the packet capture
-- How WAF rules are structured (block, deny by reputation, custom, rate-limit) and how a challenge-response approach (CAPTCHA) fits in when blocking outright risks false positives
-
-### Analyst Mindset
-- Client-side attacks are a genuine blind spot for a SOC without endpoint or browser-side monitoring. That gap is worth calling out explicitly rather than assuming logs will catch everything
-- Logs and packet captures are complementary, not redundant. Logs are quicker to search but often miss POST bodies and full payloads. Packet captures are more complete but heavier to review, so knowing when to escalate from one to the other saves time
-- Following the actual sequence of an attack (recon, then brute-force, then exploitation) rather than jumping straight to the flag helped build a mental model of how a real breach unfolds end to end
-
----
 
 ## 💬 Honest Self-Assessment
 
 **What went well:**
-Reconstructing the full attack chain across both the log file and the packet capture felt natural, and building a custom Wireshark filter for SQLi indicators instead of relying on a pre-made one was a good stretch.
+Reconstructing the full attack chain across both the log file and the packet capture, and building a custom Wireshark filter for SQLi indicators instead of relying on a pre-made one was a good stretch.
 
 **What I need to improve:**
 Getting faster at recognizing common attack tool signatures (like `sqlmap` or `FFUF`) in User-Agent strings on sight, without needing to search them. Building a personal reference list of common attack tool fingerprints would speed up future log reviews.
