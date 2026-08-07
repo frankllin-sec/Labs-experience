@@ -25,6 +25,7 @@
 | Web Security Essentials | TryHackMe | Jul/30/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Web-Security-Essentials/README.md)
 | Detecting Web Attacks | TryHackMe | Aug/02/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Detecting-Web-Attacks/README.md)
 | Intro to Malware Analysis | TryHackMe | Aug/04/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Intro-to-Malware-Analysis/README.md)
+| Detecting Web DDoS | TryHackMe | Aug/07/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Detecting-Web-DDoS/README.md) |
 
 
 
