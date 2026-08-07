@@ -34,7 +34,6 @@ This room covers Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS
 | **HTTP Flood** | Sending a large number of HTTP requests to overwhelm the server |
 | **Oversized Query / Logic Abuse** | Forcing the server to process large, resource-intensive requests (e.g. `GET /products?limit=999999`) |
 | **Targeted Endpoints** | Resource-heavy pages like `/login`, `/search`, `/api`, `/register`, or `/checkout` are prime targets since each request triggers database queries, validation, or session handling |
-| **Key Log Indicators** | High request rate to one endpoint, odd or scripted User-Agents (curl, python-requests), geographic anomalies, burst timestamps, a spike in 5xx server errors, and logic abuse in the query string |
 
 ---
 
@@ -112,7 +111,7 @@ This room covers Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS
 
 **Q: Using the `timechart` command, what is the peak number of requests made per second during the attack?**
 
-**Method:** Ran `index="main" | timechart span=1s count by url limit=1`. The room's suggested `span=5m` was too coarse to show a per-second peak, so the span was narrowed to `1s` to catch the actual burst.
+**Method:** Ran `index="main" | timechart span=1s count by url limit=1`. The room's suggested `span=5m` was narrowed down to `1s` to catch the actual burst.
 
 > **Answer:** `207`
 
@@ -146,8 +145,6 @@ This room covers Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS
 
 ## 🧠 What I Learned
 
-- How to distinguish DoS from DDoS by tracing whether the flood originates from one IP or a distributed botnet
-- How to spot a DoS pattern in raw web logs: a single IP hammering one endpoint, followed by a spike of 503 errors for everyone else
 - How to use Splunk's `uri_path`, `clientip`, and `useragent` fields to isolate attack traffic from normal traffic
 - How narrowing a `timechart` span (from 5m down to 1s) changes what the data reveals, coarse spans hide short bursts that matter most in a DDoS
 - How to pinpoint the moment defenses recovered by correlating the attack start time with the first legitimate 503 response afterward
@@ -161,7 +158,7 @@ This room covers Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS
 Moving from raw log analysis to Splunk made the pattern recognition much faster. Pivoting on `clientip`, `uri_path`, and `useragent` to isolate the botnet traffic felt intuitive once the right fields were selected.
 
 **What I need to improve:**
-I initially used the room's suggested `timechart span=5m`, which was too coarse to reveal the actual per-second peak. I need to get faster at judging the right time granularity for a given question instead of defaulting to what's suggested. I would also like to get more comfortable building a repeatable SPL query set for DDoS triage instead of adjusting fields one at a time.
+I still don't know most of the SPL filter commands by heart, I haven't memorized them yet, so sometimes it's faster for me to click through the fields on the side panel and drill into top values than to write the search command directly. I want to get more comfortable writing SPL from memory instead of relying on the field sidebar.
 
 ---
 <p align="center">
