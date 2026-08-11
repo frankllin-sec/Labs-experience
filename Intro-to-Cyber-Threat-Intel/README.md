@@ -142,10 +142,8 @@ An L1 analyst mostly works at the Technical layer (escalating IOCs), documents T
 ## 🧠 What I Learned
 
 - The data, information, intelligence pyramid, and why raw artefacts need enrichment before they're actionable
-- The difference between IOC (evidence a breach happened), IOA (an attack in progress), and TTP (the adversary's methodology)
 - Which first resources to check for each indicator type (IP, domain, URL, hash, email, local artefact)
 - Why a feed and a platform serve different purposes, and why over-ingesting feeds without curation hurts more than it helps
-- The four classifications of threat intel (Strategic, Tactical, Operational, Technical) and where an L1 analyst's work actually sits
 - How to correlate scattered alerts (email, file, IP, login, victim) into a single threat actor profile
 
 ---
@@ -156,7 +154,7 @@ An L1 analyst mostly works at the Technical layer (escalating IOCs), documents T
 The practical part (Task 5) was straightforward: matching each alert to the right field in the threat profile tool wasn't hard once I understood the scenario. Correlating the email, the file, the IP, and the account login into one story felt natural.
 
 **What I need to improve:**
-This lab was much heavier on theory than the hands-on labs I've done so far, and the terminology is where I need more repetition. IOC vs IOA vs TTP, and feed vs platform, are the kind of distinctions that are easy to nod along to while reading but harder to recall cold during an actual triage. I want to drill these definitions until I can explain each one without looking it up.
+This lab was much heavier on theory than the hands-on labs I've done so far, and the terminology is where I need more repetition. IOC vs IOA vs TTP, and feed vs platform, are the kind of distinctions that are easy to nod along to while reading but harder to recall cold during an actual triage. I need to drill these definitions until I can explain each one without looking it up.
 
 ---
 <p align="center">
