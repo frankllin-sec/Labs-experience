@@ -28,6 +28,7 @@
 | Detecting Web DDoS | TryHackMe | Aug/07/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Detecting-Web-DDoS/README.md) |
 | Shadow Trace | TryHackMe | Aug/10/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Shadow-Trace/README.md) |
 | Intro to Cyber Threat Intel | TryHackMe | Aug/11/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Intro-to-Cyber-Threat-Intel/README.md) |
+| File and Hash Threat Intel | TryHackMe | Aug/12/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/File-and-Hash-Threat-Intel/README.md) |
 
 
 
