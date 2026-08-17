@@ -25,35 +25,12 @@ Event logs record what happens on a system to provide an audit trail, essential 
 
 ---
 
-## 🔑 Key Concepts
-
-**Windows Event Log categories:**
-
-| Log Type | What it Records |
-|---|---|
-| **System** | OS-level activity: hardware changes, device drivers, system changes |
-| **Security** | Logon/logoff activity per the audit policy, the main source for investigating unauthorized access |
-| **Application** | Errors, events, and warnings from installed applications |
-| **Directory Service** | Active Directory changes, mainly on domain controllers |
-| **File Replication Service** | Group Policy and logon script sharing across domain controllers |
-| **DNS** | DNS server domain events |
-| **Custom** | Application-defined logs with their own size and ACL settings |
-
-**Three ways to access event logs:**
-
-| Tool | Type | Best for |
-|---|---|---|
-| **Event Viewer** | GUI (MMC snap-in) | Quick interactive filtering and inspection |
-| **wevtutil.exe** | Command-line | Scripting log queries, exports, and log management |
-| **Get-WinEvent** | PowerShell cmdlet | Combining multiple sources, FilterHashtable and XPath queries at scale |
-
-**XPath queries:** the Windows Event Log supports a subset of XPath 1.0 to filter events. A query starts with `*` or `Event`, then walks down the XML tree (`System`, `EventID`, `Provider/@Name`, etc.). Event Viewer's Details tab in XML View is the fastest way to find the exact tag names needed to build a query, and both `wevtutil` and `Get-WinEvent` accept XPath as a filter.
 
 ---
 
 ## 🔍 Investigation
 
-### Part 1: Event Viewer
+###   Event Viewer
 
 **Q: Filter the PowerShell Operational log for Event ID 4104. What is the Event ID for the earliest recorded event (excluding the warning event)?**
 
@@ -85,53 +62,9 @@ Event logs record what happens on a system to provide an audit trail, essential 
 
 ---
 
-### Part 2: wevtutil.exe
 
-**Q: How many log names are in the machine?**
 
-**Note:** I ran `(wevtutil el).Count` and separately `wevtutil el | Measure-Object`, both returned 1072, but the room's expected answer was 1071. A quick search showed other people hitting the same off-by-one mismatch, likely a stale answer key rather than a mistake on my end.
-
-> **Answer:** `1071`
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Event-Logs/Screenshots/l4.jpg" width="700"/>
-</p>
-
-**Q: What event files would be read when using the query-events command?**
-
-> **Answer:** `event log, log file, structured query`
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Event-Logs/Screenshots/l5.jpg" width="700"/>
-</p>
-
-**Q: What option would you use to provide a path to a log file? What is the VALUE for /q?**
-
-> **Answer:** `/lf:true`, and `/q`'s value is an `Xpath query`
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Event-Logs/Screenshots/l6.jpg" width="700"/>
-</p>
-
-**Q: Based on `wevtutil qe Application /c:3 /rd:true /f:text`, what is the log name?**
-
-> **Answer:** `Application`
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Event-Logs/Screenshots/l7.jpg" width="700"/>
-</p>
-
-**Q: What is the /rd option for? What is the /c option for?**
-
-> **Answer:** `/rd` sets the event read direction, `/c` sets the maximum number of events to read
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/frankllin-sec/Labs-experience/main/Windows-Event-Logs/Screenshots/l8.jpg" width="700"/>
-</p>
-
----
-
-### Part 3: Get-WinEvent
+### Get-WinEvent
 
 **Q: Execute the command from Example 1. What are the names of the logs related to OpenSSH?**
 
@@ -161,7 +94,7 @@ Event logs record what happens on a system to provide an audit trail, essential 
 
 ---
 
-### Part 4: Putting Theory Into Practice, Investigating merged.evtx
+###   Putting Theory Into Practice, Investigating merged.evtx
 
 **Scenario 1: PowerShell Visibility.** Management approved PowerShell usage company-wide. The team needs visibility to confirm no coverage gaps.
 
@@ -249,23 +182,14 @@ Event logs record what happens on a system to provide an audit trail, essential 
 
 ---
 
-## 🧠 What I Learned
-
-- The difference between the three tools for accessing event logs, and when each one actually makes sense: Event Viewer for quick interactive digging, wevtutil.exe for scripted CLI queries, Get-WinEvent for combining and filtering at scale
-- That the same Event ID (like 4104) can live in different logs (PowerShell/Operational vs Windows PowerShell) with different meanings, checking the wrong log burned time on this lab
-- How to build an XPath query by walking the XML tree in Event Viewer's Details/XML View tab, System, EventID, Provider/@Name
-- Practical detection knowledge: Event ID 400 for PowerShell downgrade attacks, Event ID 104 for log clears, Event ID 4799 for group membership enumeration
-- How to cross-reference a real forensic file (`merged.evtx`) against four distinct SOC scenarios instead of a single flat Q&A list
-
----
 
 ## 💬 Honest Self-Assessment
 
 **What went well:**
-Once I understood the difference between PowerShell/Operational and Windows PowerShell logs, correlating events across the four scenarios in `merged.evtx` went smoothly. Building XPath queries by reading the XML view tag-by-tag made sense quickly, and I got comfortable pivoting between Event Viewer, wevtutil, and Get-WinEvent depending on what a question actually needed.
+Once I understood the difference between PowerShell/Operational and Windows PowerShell logs, correlating events across the  scenarios in `merged.evtx` went smoothly. Building XPath queries by reading the XML view tag-by-tag made sense quickly, and I got comfortable pivoting between Event Viewer, wevtutil, and Get-WinEvent depending on what a question actually needed.
 
 **What I need to improve:**
-A couple of answers (the 2nd PowerShell command, and the log name count) didn't match what my tools were actually showing me, and searching online confirmed other people hit the same mismatches, likely a stale answer key rather than something I did wrong. Still, it's a good reminder to sanity-check twice before assuming I made the mistake. I also want to get faster at picking the right log on the first try instead of checking Operational by default and correcting course afterward.
+PowerShell syntax is still something I need to drill. I can usually figure out what a command should do, but writing the actual syntax from scratch, especially cmdlet names, pipeline structure,
 
 ---
 <p align="center">
