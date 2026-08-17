@@ -186,7 +186,7 @@ Event logs record what happens on a system to provide an audit trail, essential 
 ## 💬 Honest Self-Assessment
 
 **What went well:**
-Once I understood the difference between PowerShell/Operational and Windows PowerShell logs, correlating events across the  scenarios in `merged.evtx` went smoothly. Building XPath queries by reading the XML view tag-by-tag made sense quickly, and I got comfortable pivoting between Event Viewer, wevtutil, and Get-WinEvent depending on what a question actually needed.
+Correlating events across the  scenarios in `merged.evtx` went smoothly. Building XPath queries by reading the XML view tag-by-tag made sense quickly, and I got comfortable pivoting between Event Viewer, wevtutil, and Get-WinEvent depending on what a question actually needed.
 
 **What I need to improve:**
 PowerShell syntax is still something I need to drill. I can usually figure out what a command should do, but writing the actual syntax from scratch, especially cmdlet names, pipeline structure,
