@@ -110,15 +110,6 @@ I'm a Tier 1 Security Analyst at a Managed Security Service Provider (MSSP), mon
 
 ---
 
-## 🧠 What I Learned
-
-- How to pivot from a Suricata alert signature straight to source/destination IPs using Brim's category-based alert queries
-- How VirusTotal's Community tab surfaces analyst-tagged campaign names and threat actor attribution (TA505, MirrorBlast) that the Detection tab alone doesn't show
-- How to retrace a multi-stage attack by filtering HTTP requests across several IPs instead of just the primary flagged one
-- How to follow a TCP stream in Wireshark from a Brim-filtered packet and search inside it for file paths and dropped file names
-- That question wording in a room can drift out of sync with the underlying PCAP after updates, worth cross-checking with search when an expected answer type (like "a domain") doesn't match what the evidence actually shows
-
----
 
 ## 💬 Honest Self-Assessment
 
@@ -126,7 +117,7 @@ I'm a Tier 1 Security Analyst at a Managed Security Service Provider (MSSP), mon
 The Brim to VirusTotal to Wireshark pivot became a repeatable workflow by the end of the room. Tracing the MirrorBlast/TA505 attribution and retracing the multi-IP attack chain felt methodical rather than like guesswork.
 
 **What I need to improve:**
-The second dropped-file question took two incorrect attempts and I'm still not fully confident in the final path I landed on. I need more practice reading raw TCP stream output under time pressure, picking the right file path out of a wall of hex-adjacent text is slower for me than it should be. I also want to get quicker at noticing when a question doesn't match the evidence (like the "domain" question that wasn't actually a domain) instead of assuming I'm the one who made the mistake.
+The second dropped-file question took two incorrect attempts and I'm still not fully confident in the final path I landed on. I need more practice reading raw TCP stream output under time pressure, picking the right file path . 
 
 ---
 <p align="center">
