@@ -113,9 +113,6 @@ I'm a Tier 1 Security Analyst at a Managed Security Service Provider (MSSP), mon
 
 ## 💬 Honest Self-Assessment
 
-**What went well:**
-The Brim to VirusTotal to Wireshark pivot became a repeatable workflow by the end of the room. Tracing the MirrorBlast/TA505 attribution and retracing the multi-IP attack chain felt methodical rather than like guesswork.
-
 **What I need to improve:**
 The second dropped-file question took two incorrect attempts and I'm still not fully confident in the final path I landed on. I need more practice reading raw TCP stream output under time pressure, picking the right file path . 
 
