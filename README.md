@@ -33,6 +33,7 @@
 | Invite Only | TryHackMe | Aug/14/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Invite-Only/README.md) |
 | Phishing Unfolding | TryHackMe | Aug/15/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Phishing-Unfolding/README.md) |
 | Windows Event Logs | TryHackMe | Aug/16/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Event-Logs/README.md) |
+| Warzone 1 | TryHackMe | Aug/17/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Warzone-1/README.md) |
 
 
 
