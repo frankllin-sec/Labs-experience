@@ -55,7 +55,7 @@ During normal SOC monitoring, Analyst John observed an alert on an IDS solution 
 
 **Q: The user's machine used a legit Windows binary to download a file from the C2 server. What is the name of the binary? What is the full URL of the C2?**
 
-**Method:** Selected the `user_agent` field and compared values. Most traffic showed a normal `Mozilla/5.0` browser string, but one entry stood out: `bitsadmin`, a legitimate Windows binary abused to download files, a classic LOLBin technique. Filtering on that user-agent revealed the full request URI.
+**Method:** Selected the `user_agent` field and compared values. Most traffic showed a normal `Mozilla/5.0` browser string, but one entry stood out: `bitsadmin`, a legitimate Windows binary abused to download files. Filtering on that user-agent revealed the full request URI.
 
 > **Answer:** `bitsadmin` (binary), `pastebin.com/yTg0Ah6a` (full C2 URL)
 
