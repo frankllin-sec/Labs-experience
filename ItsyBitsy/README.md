@@ -79,8 +79,6 @@ During normal SOC monitoring, Analyst John observed an alert on an IDS solution 
 
 ## 🧠 What I Learned
 
-- How to use Kibana Discover's date range and field statistics (Top 5 values) to spot a rare, anomalous source IP hiding inside otherwise normal traffic
-- How to recognize a LOLBin (Living-off-the-Land Binary) like `bitsadmin` by its User-Agent string standing out against normal browser traffic
 - How trusted filesharing platforms like Pastebin get abused as free, hard-to-block C2 infrastructure
 - The correct operational security practice for investigating a suspected malicious URL: never browse it directly from an analyst workstation, use an isolated VM or a preview tool like urlscan.io instead
 
@@ -88,8 +86,6 @@ During normal SOC monitoring, Analyst John observed an alert on an IDS solution 
 
 ## 💬 Honest Self-Assessment
 
-**What went well:**
-The investigation flowed cleanly from one pivot to the next: date filter to rare IP to LOLBin user-agent to C2 URL to payload. Recognizing `bitsadmin` as a LOLBin rather than just noise in the user-agent field was a good instinct, and I liked that I caught myself before treating the pastebin link like a normal one and noted the safer way to have handled it.
 
 **What I need to improve:**
 This is a good habit I want to make automatic rather than something I only remember after the fact: before opening any URL tied to an investigation, default to an isolated VM or urlscan.io first, every time, not just when it occurs to me partway through.
