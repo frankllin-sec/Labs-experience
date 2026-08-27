@@ -34,7 +34,7 @@
 | Phishing Unfolding | TryHackMe | Aug/15/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Phishing-Unfolding/README.md) |
 | Windows Event Logs | TryHackMe | Aug/16/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Windows-Event-Logs/README.md) |
 | Warzone 1 | TryHackMe | Aug/26/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Warzone-1/README.md) |
-| ItsyBitsy | TryHackMe | Aug/27/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/ItsyBitsy/README.md) |
+| ItsyBitsy - Investigate an incident  | TryHackMe | Aug/27/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/ItsyBitsy/README.md) |
 
 
 
