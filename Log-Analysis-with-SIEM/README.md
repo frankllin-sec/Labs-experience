@@ -23,20 +23,6 @@ Any SOC analyst needs to be comfortable using a SIEM (Security Information and E
 
 ---
 
-## 🔑 Key Concepts
-
-| Concept | Description |
-|---|---|
-| **Centralisation** | Instead of checking logs in ten different places, a SIEM pulls everything into one spot, so an analyst isn't switching between systems mid-investigation |
-| **Correlation** | Linking separate events together (an IDS alert, a Windows log, a Sysmon log) to build the full picture of what actually happened |
-| **Historical Events** | A SIEM keeps past logs searchable, so an analyst can check whether something (like an unusual login location) has happened before |
-| **Normalisation** | Different systems log events in different formats (JSON, XML, plain text). Normalisation converts them all into one consistent format so they're easier to search |
-| **Host-Based Logs** | Logs from individual machines, workstations and servers, useful for spotting things like malicious process execution |
-| **Network-Based Logs** | Logs from firewalls, routers, IDS/IPS, showing how devices are talking to each other |
-| **Web-Based Logs** | Logs from web servers, useful for catching brute-force attempts, web shells, and DDoS activity |
-
----
-
 ## 🔍 Investigation
 
 **Q: What is the process of linking data from multiple sources to identify relationships between events called? What is the process of collecting log data from multiple systems into one place called?**
