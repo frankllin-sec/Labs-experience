@@ -153,21 +153,15 @@ Three shifts, three alerts, three different environments. This room walks throug
 
 ## 🧠 What I Learned
 
-- The value of reading alert context (source IP, hostname naming convention, user's role, time of day) before ever opening the SIEM, it shapes what to look for and saves time
-- How to use Splunk `rex` to extract fields like username and source IP directly out of raw log lines, then group and count by those fields
-- How a scheduled task's ProcessId can be traced back through its parent process to reconstruct exactly how persistence was established
-- How to separate an obvious noisy signal (Hydra brute force) from the quieter, more important one underneath it (an active web shell) by excluding the loud traffic and looking again
-- That a web shell doesn't need to hide its filename, a quick Google search on `b374k.php` was enough to confirm it's a known, publicly documented tool
+- How to triage the same way across Linux, Windows, and Web alerts: read the alert context first, then confirm it in Splunk
+- How to spot brute force, persistence, and web shell activity in raw logs
 
 ---
 
 ## 💬 Honest Self-Assessment
 
-**What went well:**
-Running the same triage shape across three very different environments (Linux, Windows, Web) helped it click: gather alert context, form a hypothesis, confirm or rule it out in the SIEM, then escalate. The web shell scenario especially clicked once I excluded the noisy Hydra traffic and the real signal (`b374k.php`) became obvious.
-
 **What I need to improve:**
-The Splunk `rex` regex searches in this room were provided by the room itself, and I leaned on them rather than writing my own from scratch. I want to get comfortable building these field-extraction regexes myself, since real alerts won't come with a ready-made query attached.
+The Splunk filters and commands used in this room aren't things I know by heart yet. I had to research which command and syntax to use instead of writing it from memory. I want to practice until these searches come naturally instead of needing to look up the syntax every time.
 
 ---
 <p align="center">
