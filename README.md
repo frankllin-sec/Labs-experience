@@ -37,6 +37,7 @@
 | ItsyBitsy - Investigate an incident  | TryHackMe | Aug/27/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/ItsyBitsy/README.md) |
 | Log Analysis with SIEM | TryHackMe | Aug/29/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Log-Analysis-with-SIEM/README.md) |
 | Alert Triage With Splunk | TryHackMe | Sep/01/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Alert-Triage-With-Splunk/README.md) |
+| Alert Triage With Elastic | TryHackMe | Sep/03/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Alert-Triage-With-Elastic/README.md) |
 
 
 
