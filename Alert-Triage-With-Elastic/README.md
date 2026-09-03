@@ -132,15 +132,6 @@ Our team manages servers and infrastructure for a few small businesses. One clie
 
 ---
 
-## 🧠 What I Learned
-
-- How to build a Kibana query step by step, IP first, then a specific method or event, then narrow it further, instead of trying to filter everything at once
-- Why checking multiple log sources (web, Windows Security, Sysmon, PowerShell) for the same time window paints a much clearer picture than trusting just one
-- That not everything malicious triggers an alert, a legitimate tool like `Rar.exe` used by the wrong account is something an analyst has to notice on their own
-- How a single IP and a single account can be traced through an entire attack chain: a web shell, a login, a new backdoor account, privilege changes, and finally data being packaged for exfiltration
-
----
-
 ## 💬 Honest Self-Assessment
 
 **What I need to improve:**
