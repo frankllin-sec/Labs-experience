@@ -375,7 +375,7 @@ An alert came in from the SOC with CRITICAL severity: a user opened a malicious 
 - How to reconstruct a full attack chain end to end, malicious document, exploit, stage 2 download, C2 traffic, discovery, privilege escalation, and persistence, by following the trail one artefact at a time
 - How to correlate the same event across three data sources (Sysmon, Windows Event Logs, packet capture) instead of relying on just one
 - How to decode and read attacker C2 traffic in CyberChef when a URL doesn't make sense on its own
-- Recognizing known tools by their SHA256 hash through VirusTotal (chisel for the reverse socks proxy, PrintSpoofer for privilege escalation)
+- Recognizing known tools by their SHA256 hash through VirusTotal 
 - How attackers set up persistence in more than one way in the same intrusion, a startup folder script early on, then a fake Windows service later once they had full control
 
 ---
