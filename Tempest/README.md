@@ -1,4 +1,4 @@
-# 🛡️ Tempest: TryHackMe Lab
+# 🛡️ Tempest - Full Attack Chain Investigation: TryHackMe Lab
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-TryHackMe-red?style=for-the-badge"/>
