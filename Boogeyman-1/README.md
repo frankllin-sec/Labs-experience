@@ -200,10 +200,8 @@ Julianne, a finance employee at Quick Logistics LLC, opened an invoice attachmen
 
 ## 🧠 What I Learned
 
-- How to reconstruct a full attack chain across three different artefacts: an email, PowerShell logs, and a packet capture
-- How to parse JSON-formatted logs with `jq`, filtering by field and searching script block content for domains and tool names
-- Recognizing DNS as an exfiltration channel, data gets split up and hidden inside DNS queries that look like normal lookups to a firewall
-- How to decode a stolen file back into its original form from those DNS queries using `tshark`, `cut`, and `xxd`
+- How to trace a full attack chain across an email, PowerShell logs, and a packet capture
+- Recognizing DNS as an exfiltration channel, data can be hidden inside DNS queries that look like normal lookups
 - That `.kdbx` is a KeePass password database file, a small but useful fact I didn't know before this room
 
 ---
@@ -211,7 +209,7 @@ Julianne, a finance employee at Quick Logistics LLC, opened an invoice attachmen
 ## 💬 Honest Self-Assessment
 
 **What I need to improve:**
-This was the hardest room I've documented so far. I got stuck multiple times and had to lean on outside help, Google AI for building several `jq` commands, a plain Google search for facts I didn't know (like the .kdbx file type), and a YouTube walkthrough for the final question, which I genuinely couldn't work out on my own. I'm being upfront about that because I think it matters more to show how I actually got through a hard room than to pretend I solved every step independently. The `jq` and `tshark` syntax used here is the next thing I want to practice until I don't need to search for it anymore.
+This was the hardest room I've documented so far. I got stuck multiple times and had to lean on outside help, Google AI for building several `jq` commands, a plain Google search for facts I didn't know, and a YouTube walkthrough for the final question, which I genuinely couldn't work out on my own. I'm being upfront about that because I think it matters more to show how I actually got through a hard room than to pretend I solved every step independently.
 
 ---
 <p align="center">
