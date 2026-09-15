@@ -40,7 +40,7 @@
 | Alert Triage With Elastic | TryHackMe | Sep/03/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Alert-Triage-With-Elastic/README.md) |
 | Benign | TryHackMe | Sep/08/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Benign/README.md) |
 | Tempest - Full Attack Chain Investigation | TryHackMe | Sep/13/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Tempest/README.md) |
-| Boogeyman 1 - Full Attack Chain Investigation | TryHackMe | Sep/14/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Boogeyman-1/README.md) |
+| Boogeyman 1 - Full Attack Chain Investigation | TryHackMe | Sep/15/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Boogeyman-1/README.md) |
 
 
 
