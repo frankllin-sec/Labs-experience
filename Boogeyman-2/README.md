@@ -187,7 +187,7 @@ strings WKSTN-2961.raw | grep -i "schtasks"
 ## 💬 Honest Self-Assessment
 
 **What I need to improve:**
-This lab pushed my Volatility skills further than Boogeyman 1 did, since almost the entire investigation happened inside a single memory dump instead of across multiple artefact types. For a few of the plugin chains, I had to ask AI for help finding the best command for that specific situation, since I wasn't confident I could get there on my own. Chaining plugins together (pstree to find a PID, then cmdline to confirm how it was launched, then netscan to find its network activity) took a few attempts to get right. I want to get faster at knowing which Volatility plugin answers which kind of question without having to check the documentation each time.
+This lab pushed my Volatility skills further than Boogeyman 1 did, since almost the entire investigation happened inside a single memory dump instead of across multiple artefact types. For a few of the plugin chains, I wasn't confident which Volatility plugin to use next, so I used AI to help me identify the right command for that specific situation, then verified the output made sense against the memory dump. This taught me that knowing how to ask the right question is just as important as knowing the tool itself. Chaining plugins together (pstree to find a PID, then cmdline to confirm how it was launched, then netscan to find its network activity) took a few attempts to get right. I want to get faster at knowing which Volatility plugin answers which kind of question without having to check the documentation each time.
 
 ---
 
