@@ -177,10 +177,9 @@ strings WKSTN-2961.raw | grep -i "schtasks"
 
 ## 🧠 What I Learned
 
-- How to trace a full infection chain purely from a memory dump, from the initial malicious document through to persistence, using Volatility 3
-- That `windows.pstree` is the fastest way to confirm parent-child process relationships and prove which process actually launched which payload
-- That a process that has already exited can still leave its command line recoverable in raw memory via `strings`, even when it no longer shows up in structured Volatility plugins
-- Reinforced how attackers chase persistence immediately after establishing C2, in this case with a daily scheduled task running an obfuscated, base64-encoded PowerShell command
+- How to trace a full infection chain, from the initial malicious document to persistence, using only a memory dump and Volatility
+- That command-line history can sometimes still be recovered from raw memory even after a process has already exited
+- How quickly attackers move to set up persistence right after gaining C2 access
 
 ---
 
