@@ -215,7 +215,9 @@ Evan Hutchinson, the CEO of Quick Logistics LLC, received a phishing email and o
 ## 💬 Honest Self-Assessment
 
 **What I need to improve:**
-This was a long, multi-stage investigation, and a couple of the KQL filters weren't obvious to me, especially the UAC bypass query, where I asked Claude for help identifying the right binaries and syntax to filter on. I'm being upfront about that. I'd like to get more comfortable building Kibana queries from scratch, especially combining multiple conditions (provider, event code, process name) without needing to look up the syntax each time.
+I'm still entry level in cybersecurity, so for a few of the filters in this lab, especially the UAC bypass one, I wasn't sure what I needed to search for. I asked Claude to help me understand what should be done and why, instead of just giving me the answer, which helped me actually learn the logic behind the filter instead of just copying it.
+
+Stepping back, this whole lab is really just one continuous story: the attacker got their first foothold on the victim's computer through a phishing email, and from there kept escalating step by step (gaining local admin, bypassing UAC, stealing credentials, moving to other computers on the network, and finally taking over the domain controller) until they had enough access to deploy ransomware. Seeing that full chain laid out helped me understand why each stage of an attack matters, not just the individual technical steps.
 
 ---
 
