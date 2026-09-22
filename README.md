@@ -42,6 +42,7 @@
 | Tempest - Full Attack Chain Investigation | TryHackMe | Sep/13/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Tempest/README.md) |
 | Boogeyman 1 - Full Attack Chain Investigation | TryHackMe | Sep/15/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Boogeyman-1/README.md) |
 | Boogeyman 2 - Full Attack Chain Investigation | TryHackMe | Sep/20/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Boogeyman-2/README.md) |
+| Boogeyman 3 - Full Attack Chain Investigation | TryHackMe | Sep/22/2026 | [View Lab](https://github.com/frankllin-sec/Labs-experience/blob/main/Boogeyman-3/README.md) |
 
 
 
